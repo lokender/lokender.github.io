@@ -1,0 +1,119 @@
+{% assign profileinfo = site.data.data.profileinfo %}
+<section class="section summary-section">
+
+  
+<style>
+table, th, td {
+  border: 5px solid white;
+}
+</style>
+
+<table>
+  <tr>
+    <th><img class="avatar" src="profile.png" /></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th> 
+   <th><ul class="list-unstyled contact-list"> 
+    <li class="email">
+      <h2 class="section-title">
+    Lokender Tiwari
+  </h2>
+    </li>
+    <li class="email">
+    Ph.D. Candidate   
+ </li>
+    <li class="email">
+   <a href="https://www.iiitd.ac.in/">IIIT-Delhi</a>
+ </li>
+</ul>
+</th>
+
+
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+    <th>
+
+ <ul class="list-unstyled contact-list">
+
+    {% if profileinfo.email1 %}
+    <li class="email"><i class="fas fa-envelope"></i>
+      <a href="mailto:{{ sidebar.email }}">{{ profileinfo.email1 }}</a>
+    </li>
+    {% endif %}
+
+    {% if profileinfo.email2 %}
+    <li class="email"><i class="fas fa-envelope"></i>
+      <a href="mailto:{{ sidebar.email }}">{{ profileinfo.email2 }}</a>
+    </li>
+    {% endif %}
+<!--    {% if sidebar.phone %}
+    <li class="phone"><i class="fas fa-phone"></i>
+      <a href="tel:{{ sidebar.phone }}">{{ sidebar.phone }}</a>
+    </li>
+    {% endif %}
+-->
+    {% if profileinfo.website %}
+    <li class="website"><i class="fas fa-globe-americas"></i>
+      <a href="https://medium.com/3dcomputervision" target="_blank">3DVision Blog</a>
+    </li>
+    {% endif %}
+
+    {% if profileinfo.linkedin %}
+    <li class="linkedin"><i class="fab fa-linkedin"></i>
+      <a href="https://linkedin.com/in/{{ sidebar.linkedin }}" target="_blank">{{ profileinfo.linkedin }}</a>
+    </li>
+    {% endif %}
+
+    {% if profileinfo.github %}
+    <li class="github"><i class="fab fa-github"></i>
+      <a href="http://github.com/{{ sidebar.github }}" target="_blank">{{ profileinfo.github }}</a>
+    </li>
+    {% endif %}
+
+    {% if profileinfo.gitlab %}
+    <li class="gitlab"><i class="fab fa-gitlab"></i>
+      <a href="http://gitlab.com/{{ sidebar.gitlab }}" target="_blank">{{ profileinfo.gitlab }}</a>
+    </li>
+    {% endif %}
+
+    {% if profileinfo.bitbucket %}
+    <li class="bitbucket"><i class="fab fa-bitbucket"></i>
+      <a href="http://bitbucket.com/{{ sidebar.bitbucket }}" target="_blank">{{ profileinfo.bitbucket }}</a>
+    </li>
+    {% endif %}
+
+    {% if profileinfo.twitter %}
+    <li class="twitter"><i class="fab fa-twitter"></i>
+      <a href="https://twitter.com/{{ sidebar.twitter }}" target="_blank">{{ profileinfo.twitter }}</a>
+    </li>
+    {% endif %}
+
+
+  </ul>
+
+</th>
+
+</table>
+
+</section><!--//section-->
+
+
