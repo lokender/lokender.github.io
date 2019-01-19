@@ -71,24 +71,19 @@ table, th, td {
     </li>
     {% endif %}
 -->
-    {% if profileinfo.website %}
+  
     <li class="website"><i class="fas fa-globe-americas"></i>
       <a href="https://medium.com/3dcomputervision" target="_blank">3DVision Blog</a>
     </li>
-    {% endif %}
-
-    {% if profileinfo.linkedin %}
+  
     <li class="linkedin"><i class="fab fa-linkedin"></i>
-      <a href="https://linkedin.com/in/lokender" target="_blank">lokedner</a>
+      <a href="https://linkedin.com/in/lokender" target="_blank">lokender</a>
     </li>
-    {% endif %}
-
-    {% if profileinfo.github %}
+    
     <li class="github"><i class="fab fa-github"></i>
       <a href="http://github.com/lokender" target="_blank">lokender</a>
     </li>
-    {% endif %}
-
+    
     {% if profileinfo.gitlab %}
     <li class="gitlab"><i class="fab fa-gitlab"></i>
       <a href="http://gitlab.com/{{ sidebar.gitlab }}" target="_blank">{{ profileinfo.gitlab }}</a>
