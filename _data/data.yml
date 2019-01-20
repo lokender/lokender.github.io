@@ -4,16 +4,8 @@ profileinfo:
     tagline: Ph.D. Candidate
     avatar: profile.png  
 
-    # Sidebar links
-    email1: lokendert@iiitd.ac.in
-    email2: firstname@outlook.com
-    phone: 012 345 6789
-    website: blog 
     linkedin: lokender
     github: lokender
-    gitlab:
-    bitbucket:
-    twitter: 
 
 skills:
     title: Skills &amp; Proficiency
