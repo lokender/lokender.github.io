@@ -15,7 +15,7 @@ I am interested in developing robust methods for *low-level geometric scene unde
 ***
 
 **News** <br>
-* April 2020: Pseudo-RGBD SLAM paper released on arXiv, [Demo](https://www.youtube.com/playlist?list=PL-cvWulnEGU6gBmgr8leVbJ6k7aI3MTjA).
+* April 2020: Pseudo-RGBD SLAM paper released on [arXiv](https://arxiv.org/abs/2004.10681), [Demo](http://tiny.cc/pRGBD).
 * Arpil 2020: I will be a volunteer for [ICLR 2020](https://iclr.cc/).
 * Feb 2019: I will be spending summer 2019 at [NEC Labs America](http://www.nec-labs.com/research-departments/media-analytics/media-analytics-home).
 
