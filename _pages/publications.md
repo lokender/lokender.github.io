@@ -15,7 +15,7 @@ coming soon... [arxiv]() <br>
 *Pseudo-RGBD for Self-Improving SLAM and Depth Predictions* <br> 
 **L. Tiwari**, P. Ji, Q.-H. Tran, B. Zhuang, S. Anand, M. Chandraker <br>
 arXiv 2020 <br>
-[arxiv](https://abc.com) <br>
+[arXiv](https://arxiv.org/abs/2004.10681) , [[Demo 1](http://tiny.cc/pRGBDKITTI19)] , [Demo 2](http://tiny.cc/pRGBDKITTI11) , [Demo 3](http://tiny.cc/pRGBDTUMLCV) <br>
 
 *DGSAC: Density Guided SAmpling and Consensus* <br> 
 **L. Tiwari**, S. Anand <br>
