@@ -1,21 +1,21 @@
-<head>
-  <title>{{ site.title }}</title>
+{% include base_path %}
 
-  <!-- Meta -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lokender Tiwari's Homepage">
-  <meta name="keywords" content="Lokender,Lokender Tiwari IIITD,Tiwari,Lokender Tiwari VBSPU, Lokender Tiwari CDAC,Lokender VBSPU, Lokender CDAC,Lokendra,Lokendra Tiwari IIITD,Tiwari,Lokendra Tiwari VBSPU, Lokendra Tiwari CDAC,Lokendra VBSPU, Lokendra CDAC, 3D Computer Vision Blog, 3D Computer Vision,Robust Estimation, Robust Deep Learning, Robust Geometric Computer Vision, Geometric Deep Learning, Geometry, Homography, Fundamental Matrix, Essential Matrix, SLAM, SFM, DGSAC, Density Guided Sampling and Consensus, Autonomous Driving, swarath,Computer Vision and Deep Learning, 3D Reconstruction, ACCV, ICCV, ICIP, CVPR, PAMI, Multi-View Geometry, IIIT-Delhi, Indraprastha Institute of Information Technology, Infosys center for AI, CAI@IIITD">
+<meta charset="utf-8">
 
+{% include seo.html %}
 
+<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/plugins/bootstrap/css/bootstrap.min.css">
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Plugins CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/plugins/font-awesome/css/all.css">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
 
-  <!-- Theme CSS -->
-  <link id="theme-style" rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-</head>
+<!-- For all browsers -->
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">

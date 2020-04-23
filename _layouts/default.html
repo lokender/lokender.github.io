@@ -1,25 +1,31 @@
 ---
 layout: compress
 ---
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
-{% include head.html %}
 
-<body>
-  <div class="wrapper">
-   
+{% include base_path %}
 
-    <div class="main-wrapper">
-        {{ content }}
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body>
+
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
+
+    {{ content }}
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
     </div>
-  </div>
 
-  {% include footer.html %}
+    {% include scripts.html %}
 
-{% include scripts.html %}
-</body>
-
+  </body>
 </html>
-
