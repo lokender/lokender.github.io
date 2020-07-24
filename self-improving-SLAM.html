@@ -26,8 +26,111 @@
 <div id="container"> 
 <div class="container"> 
 
+<h1 style="text-align:center">Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction</h1> <br>
+<h4 style="text-align:center"><a href="https://cse.iiitd.ac.in/">Lokender Tiwari<sup>1</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://cse.iiitd.ac.in/">Pan Ji<sup>2</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://cse.iiitd.ac.in/">Quoc-Huy Tran<sup>2</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://cse.iiitd.ac.in/">Bingbing Zhuang<sup>2</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://cse.iiitd.ac.in/">Saket Anand<sup>1</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://cse.iiitd.ac.in/">Manmohan Chandraker<sup>2,3</sup></a>  </h4> 
+<h4 style="text-align:center"><a href="https://cse.iiitd.ac.in/"><sup>1</sup>IIIT-Delhi</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://cse.iiitd.ac.in/"><sup>2</sup>NEC Labs America </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://cse.iiitd.ac.in/"><sup>3</sup>UCSD</a>  </h4>
 
-<table class="imgtable"><tr><td>
+<h4 style="text-align:center"><div>In European Conference on Computer Vision (ECCV), 2020</div> </h4>
+
+
+<!--   Icon Section   -->
+<!-- <div class="row center">
+<div class="col l8 offset-l2 m3 offset-m1 s12">
+  <video id="vid" width="640" controls= "autoPlay" onended="this.currentTime = 0; this.play();" autoplay="" src="https://filebox.ece.vt.edu/~ylzou/eccv2018dfnet/teaser.mp4">
+  <video class="responsive-video" autoplay="" loop="" controls="">
+    <source src="https://filebox.ece.vt.edu/~ylzou/eccv2018dfnet/short_teaser.mp4" type="video/mp4">
+  </video>
+</div>
+
+</div> -->
+
+<h2 style="text-align:center">DEMOS</h2>
+<!--   Icon Section   -->
+<div class="row center">
+<div class="col l8 offset-l2 m3 offset-m1 s12">
+	<p align="center">
+<h4 style="text-align:center">KITTI Odometry Sequence 19.</h4>
+<iframe display="block" width="640" height="320" src="https://www.youtube.com/embed/OOPJpHexrdE?autoplay=1"> </iframe> 
+<h4 style="text-align:center">KITTI Odometry Sequence 11.</h4>
+<iframe width="640" height="320" src="https://www.youtube.com/embed/PMYI9j5vHOw?autoplay=1"> </iframe> 
+<h4 style="text-align:center">TUM RGB-D Sequence freiburg3 Large Cabinet Validation.</h4></p>
+<p align="center">
+<iframe display="block" width="480" height="320" src="https://www.youtube.com/embed/MffXsKjy9W0?autoplay=1"></iframe>
+</p>
+</div>
+
+</div>
+
+
+
+<h2 style="text-align:center">ABSTRACT</h2>
+<p style="text-align:justify">
+Classical monocular Simultaneous Localization And Mapping (SLAM) and the recently emerging convolutional neural networks (CNNs) for monocular depth prediction represent two largely disjoint approaches towards building a 3D map of the surrounding environment. In this paper, we demonstrate that the coupling of these two by leveraging the strengths
+of each mitigates the others shortcomings. Specifically, we propose a joint narrow and wide baseline based self-improving framework, where on the one hand the CNN-predicted depth is leveraged to perform pseudo RGB-D feature-based SLAM, leading to better accuracy and robustness than the monocular RGB SLAM baseline. On the other hand, the bundleadjusted 3D scene structures and camera poses from the more principled geometric SLAM are injected back into the depth network through novel wide baseline losses proposed for improving the depth prediction network,
+which then continues to contribute towards better pose and 3D structure estimation in the next iteration. We emphasize that our framework only requires unlabeled monocular videos in both training and inference stages, and yet is able to outperform state-of-the-art self-supervised monocular and stereo depth prediction networks (e.g., Monodepth2) and
+feature-based monocular SLAM system (i.e., ORB-SLAM). Extensive experiments on KITTI and TUM RGB-D datasets verify the superiority of our self-improving geometry-CNN framework.
+</p>
+
+<h2 style="text-align:center">PAPER</h2>
+<div style="text-align:center"> 
+<a href="https://arxiv.org/abs/2004.10681" target="_blank">
+<img class="responsive-img" src="./papers_imgs/prgbd_paper.png" width="100" height="200">
+</a>
+<h4>ECCV 2020</h4>
+</div>
+<div style="text-align:justify"> 
+<h4>Citation</h4>
+<p>Lokender Tiwari, Pan Ji, Quoc-Huy Tran, Bingbing Zhuang, Saket Anand and Manmohan Chandraker, "Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction", In Proceedings of European Conference on Computer Vision, 2020.</p>
+<h4>Bibtex</h4>
+<pre>@inproceedings{zou2018dfnet,
+    author={Tiwari, Lokender and Ji, Pan and Tran, Quoc-Huy and Zhuang, Bingbing and Anand, Saket 
+ 	and Chandraker, Manmohan},
+    title     = {Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction}, 
+    booktitle = {European Conference on Computer Vision},
+    year      = {2020}
+}
+</pre>
+</div>
+<h2 style="text-align:center">DOWNLOADS</h2>
+<div style="text-align:center"> 
+<a href="" target="_blank">
+<img class="responsive-img" src="./papers_imgs/github.png" width="100" height="200">
+</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<a href="" target="_blank">
+<img class="responsive-img" src="./papers_imgs/icon_zip.png" width="100" height="200">
+</a>
+<h4>Code (coming soon)  &nbsp&nbsp&nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Trained Models/Results </h4>
+</div>
+
+<h2 style="text-align:center">A SELF-SUPERVISED, SELF-IMPROVING FRAMEWORK</h2>
+<div style="text-align:center"> 
+<img class="responsive-img" src="./papers_imgs/self_improving_framework.png" width="600" height="400">
+<p>It alternates between pose refinement (blue arrows) and depth refinement (red arrows).</p>
+</div>
+
+<h2 style="text-align:center">QUALITATIVE DEPTH RESULTS</h2>
+<div style="text-align:center"> 
+<img class="responsive-img" src="./papers_imgs/qual_depth_far.png" width="800" height="500">
+<p>Qualitative depth evaluation results on KITTI Odometry test set. Improvement
+in depth prediction of farther scene points.</p>
+<img class="responsive-img" src="./papers_imgs/qual_depth.png" width="800" height="500">
+<p>Qualitative depth evaluation results on KITTI Raw Eigen split test set.
+MonoDepth2-M: MonoDepth2 trained using monocular images.</p>
+</div>
+
+<h2 style="text-align:center">QUALITATIVE POSE RESULTS</h2>
+<div style="text-align:center"> 
+<img class="responsive-img" src="./papers_imgs/qual_pose_kitti.png" width="600" height="400">
+<p>Qualitative pose evaluation results on KITTI Odometry sequences.</p>
+</div>
+
+<!--  -->
+
+<!-- <table class="imgtable"><tr><td>
 <a href="./"><img src="./files/p4.jpg" alt="" height="200px" /></a>&nbsp;</td>
 <td align="left"><p><font size="6" >Lokender Tiwari</font><br />
 <br />
@@ -40,14 +143,15 @@ Okhla Industrial Estate,Phase III, New Delhi, India - 110020<br />
 Email: lokendert@iiitd.ac.in<br />
 [<a href="https://scholar.google.com/citations?user=uHfnun4AAAAJ&hl=en" target="_blank">Google Scholar</a>] [<a href="https://www.linkedin.com/in/lokender/" target="_blank">LinkedIn</a>]
 [<a href="https://github.com/lokender/" target="_blank">Github</a>]</p>
-</td></tr></table>
+</td></tr></table> -->
 
-<h2>About me</h2>
+<!-- <h2>About me</h2>
 <p>I am a final year Ph.D. student at , <a href="https://www.iiitd.ac.in" target="_blank">IIIT-Delhi</a>. I work in the domain of <i>Computer Vision and Deep Learning</i>. I am advised by Dr. <a href="https://faculty.iiitd.ac.in/~anands/" target="_blank">Saket Anand</a>. My Ph.D. is supported by <a href="https://phd.dic.gov.in/" target="_blank">Visvesvarya Ph.D. Fellowship</a>. During summer 2019, I was Ph.D. Research Intern at Media Analytics Department of <a href="http://www.nec-labs.com/research-departments/media-analytics/media-analytics-home" target="_blank">NEC Laboratories America, Inc.</a> I was working with Prof. <a href="http://www.nec-labs.com/~manu/" target="_blank">Manmohan Chandraker</a>, Dr. <a href="https://cs.adelaide.edu.au/~huy/home.php" target="_blank">Quoc-Huy Tran</a>, and Dr. <a href="https://sites.google.com/site/peterji1990" target="_blank">Pan Ji</a>. 
-</p>
+</p> -->
 
 
-<h2>Research Interest</h2>
+
+<!-- <h2>Research Interest</h2>
 I am interested in developing robust methods for <i>low-level geometric scene understanding</i> (e.g SfM/SLAM, multiple-geometric model fitting, image-based 3D modeling) and <i>high-level semantic understanding</i> (e.g image classification, object detection, segmentation). In general, for robust scene understanding, I am interested in developing methods that can handle <i>noise</i>, <i>outliers</i>, and <i>adversarial perturbations</i>. 
 Recently, I focus on the following research topics:
 <ul>	
@@ -67,13 +171,13 @@ Recently, I focus on the following research topics:
 <li>[<b>Apr/2020</b>] I will be a volunteer for <a href="https://iclr.cc/" target="_blank">ICLR 2020</a></li>
 <li>[<b>Feb/2019</b>] I will be spending summer 2019 at Media Analytics Department of <a href="http://www.nec-labs.com/research-departments/media-analytics/media-analytics-home" target="_blank">NEC Laboratories America, Inc.</a></li>
 </ul>
+ -->
 
 
 
 
 
-
-<table>
+<!-- <table>
 <a id="work" class="achor"></a>
 <h2>Work Experiance</h2>
 <font size="3"> 
@@ -94,13 +198,13 @@ Recently, I focus on the following research topics:
 </ul>
 </font>
 
-</table>
+</table> -->
 
 
-<table>
-
+<!-- <table>
+ -->
 <!-- awards -->
-<a id="awards" class="achor"></a>
+<!-- <a id="awards" class="achor"></a>
 <h2>Awards</h2>
 <font size="3"> 
 <ul>
@@ -115,15 +219,15 @@ Recently, I focus on the following research topics:
 </ul>
 </font>
 
-</table>
+</table> -->
 
 <!-- Project -->
-<a id="patent" class="anchor"></a>
+<!-- <a id="patent" class="anchor"></a>
 <h2>Patent Applications</h2>
 
-<table class="imgtable">
+<table class="imgtable"> -->
 <!-- deblur-->
-<tr>
+<!-- <tr>
 <td><img class="proj_thumb" src="./papers_imgs/prgbd_patent.gif" alt="" height="100px",/>&nbsp;</td>
 <td>
 <p class="pub_title">Pseudo-RGB-D: Exploiting Learned Depth for Robust SfM </p>
@@ -132,32 +236,32 @@ Recently, I focus on the following research topics:
 (provisional application # US/62/892,018, filed on Aug 2019) <br>
 </p> </td>
 </tr>
-</table>
+</table> -->
 
 <!-- Project -->
-<a id="publications" class="anchor"></a>
+<!-- <a id="publications" class="anchor"></a>
 <h2>Publications</h2>
 
 <table class="imgtable">
-	
+	 -->
 <!-- prgbd-->
-<tr>
+<!-- <tr>
 <td><img class="proj_thumb" src="./papers_imgs/prgbd_teaser.gif" alt="" height="100px",/>&nbsp;</td>
 <td>
 <p class="pub_title">Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction</p>
 <p class="pub_author"><b>Lokender Tiwari</b>, Pan Ji, Quoc-Huy Tran, Bingbing Zhuang, Saket Anand, Manmohan Chandraker<br>
 European Conference on Computer Vision (<b>ECCV</b>), 2020 (Accepted).<br>
 [<a href= "https://arxiv.org/pdf/2004.10681.pdf" target="_blank">Preprint</a>] 
-[<a href="https://lokender.github.io/self-improving-SLAM.html" target="_blank">Project Page</a>] 
+[<a href="" target="_blank">Code coming soon</a>] 
 [<a href="bibtex.html#tiwari2020pseudo" target="_blank">BibTex</a>]
 [<a href="http://tiny.cc/pRGBDKITTI19" target="_blank">Demo 1 </a>]
 [<a href="http://tiny.cc/pRGBDKITTI11" target="_blank">Demo 2 </a>]
 [<a href="http://tiny.cc/pRGBDTUMLCV" target="_blank">Demo 3</a>]
 </p> </td>
-</tr>
+</tr> -->
 	
 <!-- REGroup-->
-<tr>
+<!-- <tr>
 <td><img class="proj_thumb" src="./papers_imgs/REGroup.png" alt="" height="100px",/>&nbsp;</td>
 <td>
 <p class="pub_title">Dissecting Deep Networks into an Ensemble of Generative Classifiers for Robust Predictions</p>
@@ -167,10 +271,10 @@ arXiv, 2020.<br>
 [<a href="https://github.com/lokender/REGroup" target="_blank">Code</a>] 
 [<a href="bibtex.html#tiwari2020dissecting" target="_blank">BibTex</a>]
 </p> </td>
-</tr>
+</tr> -->
 
 <!-- REGroup-->
-<tr>
+<!-- <tr>
 <td><img class="proj_thumb" src="./papers_imgs/intro_dgsac.png" alt="" height="100px",/>&nbsp;</td>
 <td>
 <p class="pub_title">DGSAC: Density Guided Sampling and Consensus (Journal version: with new fully automated multi model hypothesis sampling algorithm and Quadratic program based model selection.)</p>
@@ -180,13 +284,13 @@ arXiv, 2020.<br>
 [<a href="" target="_blank">Code coming soon</a>] 
 [<a href="bibtex.html#tiwari2020dgsac" target="_blank">BibTex</a>]
 </p> </td>
-</tr>
+</tr> -->
 
 
 
 
 
-<tr>
+<!-- <tr>
 <td><img class="proj_thumb" src="./papers_imgs/dgsac_wacv.jpg" alt="" height="100px",/>&nbsp;</td>
 <td>
 <p class="pub_title">DGSAC: Density Guided SAmpling and Consensus</p>
@@ -220,9 +324,9 @@ arXiv, 2020.<br>
 [<a href="bibtex.html#tiwari2016fast" target="_blank">BibTex</a>]
 </p> </td>
 </tr>
+ -->
 
-
-<tr>
+<!-- <tr>
 <td><img class="proj_thumb" src="./papers_imgs/doc_icit.jpg" alt="" height="100px",/>&nbsp;</td>
 <td>
 <p class="pub_title">Robust Camera Captured Image Mosaicking for Document Digitization and OCR Processing</p>
@@ -234,14 +338,14 @@ arXiv, 2020.<br>
 </tr>
 
 
-</table>
+</table> -->
 <!-- Project -->
-<a id="workshops" class="anchor"></a>
+<!-- <a id="workshops" class="anchor"></a>
 <h2>PhD Forum/Symposium/Workshops</h2>
 
-<table class="imgtable">
+<table class="imgtable"> -->
 <!-- deblur-->
-
+<!-- 
 <tr>
 <td><img class="proj_thumb" src="./papers_imgs/dgsac_wacv.jpg" alt="" height="100px",/>&nbsp;</td>
 <td>
@@ -261,8 +365,8 @@ arXiv, 2020.<br>
 <i>Indian Conference on Computer Vision, Graphics and Image Processing</i> (<b>ICVGIP</b>), 2020.<br>
 </p> </td>
 </tr>
-
-<tr>
+ -->
+<!-- <tr>
 <td><img class="proj_thumb" src="./papers_imgs/dgsac_wacv.jpg" alt="" height="100px",/>&nbsp;</td>
 <td>
 <p class="pub_title">Geometric Model Fiting Game</p>
@@ -273,15 +377,15 @@ arXiv, 2020.<br>
 
 
 </table>
+ -->
 
 
 
 
 
-
-<table>
+<!-- <table> -->
 <!-- Services -->
-<a id="services" class="anchor"></a>
+<!-- <a id="services" class="anchor"></a>
 <h2>Professional Services</h2>
 <p>Volunteer:  </p>
 <font size="3"> 
@@ -299,25 +403,25 @@ arXiv, 2020.<br>
 <li>IEEE Access</li>
 <li>IEEE Winter Conference on Computer Vision (WACV)</li>
 </ul>
-</font>
+</font> -->
 
 
 
 <!-- Links -->
-<h2>Collaborators</h2>
+<!-- <h2>Collaborators</h2>
 <ul>
 <li><a href= "http://www.cse.iitd.ernet.in/~suban/" target="_blank">Prof. Subhashis Banerjee</a> Professor at IIT-Delhi<br></li>
 <li><a href= "http://www.nec-labs.com/~manu/" target="_blank">Prof. Manmohan Chandraker</a>, Head, Media Analytics Department of <a href="http://www.nec-labs.com/research-departments/media-analytics/media-analytics-home" target="_blank">NEC Labs.</a> and  <a href= "https://cseweb.ucsd.edu/~mkchandraker/" target="_blank">Prof. at UC San Diego</a> <br></li>
 <li><a href= "https://cs.adelaide.edu.au/~huy/home.php" target="_blank">Dr. Quoc-Huy Tran</a>, CTO at <a href= "http://retrocausal.ai/" target="_blank">Retrocausal, Inc.</a> <br></li>
 <li><a href= "http://www.nec-labs.com/pan-ji" target="_blank">Dr. Pan Ji</a>, Researcher at <a href="http://www.nec-labs.com/research-departments/media-analytics/media-analytics-home" target="_blank">NEC Labs.</a><br></li>
 <li><a href= "http://www.nec-labs.com/bingbing-zhuang" target="_blank">Dr. Bingbing Zhuang</a>, Postdoctoral Scientist  at <a href="http://www.nec-labs.com/research-departments/media-analytics/media-analytics-home" target="_blank">NEC Labs.</a></li>
-</ul>
+</ul> -->
 
 
-<div id="footer">
+<!-- <div id="footer">
 <div id="footer-text">
 <p>Last Updated July 2020.</p>
 </div>
-</div>
+</div> -->
 </body>
 </html>
