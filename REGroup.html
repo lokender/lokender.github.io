@@ -26,8 +26,7 @@
 <div id="container"> 
 <div class="container"> 
 
-<h1 class="header center black-text" style="text-align:center">Dissecting Deep Networks into an Ensemble of Generative
-Classifiers for Robust Predictions</h1> <br>
+<h1 class="header center black-text" style="text-align:center">REGroup: Rank-aggregating Ensemble of Generative Classifiers for Robust Predictions</h1> <br>
 <h4 style="text-align:center"><a href="https://lokender.github.io/">Lokender Tiwari<sup>1</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://scholar.google.com/citations?user=eZ4WZmIAAAAJ&hl=en">Anish Madan<sup>1</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://www.iiitd.edu.in/~anands/index.html">Saket Anand<sup>1</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="http://www.cse.iitd.ac.in/~suban/">Subhashish Banerjee<sup>2</sup></a>  </h4> 
 <h4 style="text-align:center"><a href="https://www.iiitd.ac.in/"><sup>1</sup>IIIT-Delhi</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://home.iitd.ac.in/"><sup>2</sup>IIT-Delhi</a>  </h4>
 
@@ -56,11 +55,7 @@ Classifiers for Robust Predictions</h1> <br>
 
 <h2 style="text-align:center">ABSTRACT</h2>
 <p style="text-align:justify">
-Deep Neural Networks (DNNs) are often criticized for being susceptible to adversarial attacks.
-Most successful defense strategies adopt adversarial training or random input transformations
-that typically require retraining or fine-tuning the model to achieve reasonable performance. In this
-work, our investigations of intermediate representations of a pre-trained DNN lead to an interesting
-discovery pointing to intrinsic robustness to adversarial attacks. We find that we can learn a generative classifier by statistically characterizing the neural response of an intermediate layer to clean training samples. The predictions of multiple such intermediate-layer based classifiers, when aggregated, show unexpected robustness to adversarial attacks. Specifically, we devise an ensemble of these generative classifiers that rank-aggregates their predictions via a Borda count-based consensus. Our proposed approach uses a subset of the clean training data and a pre-trained model, and yet is agnostic to network architectures or the adversarial attack generation method. We show extensive experiments to establish that our defense strategy achieves state-of-the-art performance on the ImageNet validation set.
+Deep Neural Networks (DNNs) are often criticized for being susceptible to adversarial attacks. Most successful defense strategies adopt adversarial training or random input transformations that typically require retraining or fine-tuning the model to achieve reasonable performance. In this work, our investigations of intermediate representations of a \emph{pre-trained} DNN lead to an interesting discovery pointing to intrinsic robustness to adversarial attacks. We find that we can learn a \emph{generative} classifier by statistically characterizing the neural response of an intermediate layer to clean training samples. The predictions of multiple such intermediate-layer based classifiers, when aggregated, show unexpected robustness to adversarial attacks. Specifically, we devise an ensemble of these generative classifiers that rank-aggregates their predictions via a \emph{Borda count}-based consensus. Our proposed approach uses a subset of the clean training data and a pre-trained model, and yet is agnostic to network architectures or the adversarial attack generation method. We show extensive experiments to establish that our defense strategy achieves state-of-the-art performance on the ImageNet validation set.
 </p>
 
 <h2 style="text-align:center">PAPER</h2>
@@ -70,7 +65,7 @@ discovery pointing to intrinsic robustness to adversarial attacks. We find that 
 </a>
 <h4>arXiv 2020</h4>
 </div>
-<div style="text-align:justify"> 
+<!-- <div style="text-align:justify"> 
 <h4>Citation</h4>
 <p>Lokender Tiwari, Anish Madan, Saket Anand and Subhashish Banerjee, "Dissecting Deep Networks into an Ensemble of Generative Classifiers for Robust Predictions", In arXiv, 2020.</p>
 <h4>Bibtex</h4>
@@ -82,7 +77,7 @@ discovery pointing to intrinsic robustness to adversarial attacks. We find that 
 }
 }
 </pre>
-</div>
+</div> -->
 <h2 style="text-align:center">DOWNLOADS</h2>
 <div style="text-align:center"> 
 <a href="https://github.com/lokender/REGroup" target="_blank">
