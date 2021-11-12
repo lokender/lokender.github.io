@@ -1,6 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lokender Tiwari, Ph.D.</title>
+<meta name="Dr. Lokender Tiwari's Homepage" content="width=device-width, initial-scale=1.0">
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132756458-1"></script>
 <script>
@@ -10,49 +14,131 @@
 
   gtag('config', 'UA-132756458-1');
 </script>
+<!-- CSS
+================================================== -->
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/prettyPhoto.css" />
+<link rel="stylesheet" href="css/flexslider.css" />
+<link rel="stylesheet" href="css/custom-styles.css">
 
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="files/jemdoc.css" type="text/css" />
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" href="css/style-ie.css"/>
+<![endif]--> 
 
-<title>Lokender Tiwari</title> 
+
+<!-- JS
+================================================== -->
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/jquery.custom.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+    $("#btn-blog-next").click(function () {
+      $('#blogCarousel').carousel('next')
+    });
+     $("#btn-blog-prev").click(function () {
+      $('#blogCarousel').carousel('prev')
+    });
+
+     $("#btn-client-next").click(function () {
+      $('#clientCarousel').carousel('next')
+    });
+     $("#btn-client-prev").click(function () {
+      $('#clientCarousel').carousel('prev')
+    });
+    
+});
+
+ $(window).load(function(){
+
+    $('.flexslider').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+    });  
+});
+
+</script>
 
 </head>
-<body>
 
+<body class="home">
+    <!-- Color Bars (above header)-->
+<!--    <div class="color-bar-1"></div>
+    <div class="color-bar-2 color-bg"></div> -->
+    
+    <div class="container">
+    
+      <div class="row header"><!-- Begin Header -->
+      
 
- 
-<a id="home" class="anchor"></a>
+        
+        <!-- Main Navigation
+        ================================================== -->
+        <div class="span7 navigation">
+            <div class="navbar hidden-phone">
+            
+            <ul class="nav">
+
+           <li class="dropdown"><a href="index.html">Home</a></li>
+            </ul>
+           
+            </div>
+
+            <!-- Mobile Nav
+            ================================================== -->
+            <form action="#" id="mobile-nav" class="visible-phone">
+                <div class="mobile-nav-select">
+                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                    <option value="">Navigate...</option>
+                    <option value="index.html">Home</option>
+                </select>
+                </div>
+                </form>
+
+        </div>
+        
+      </div><!-- End Header -->
+     
+    <a id="home" class="anchor"></a>
 <div id="container"> 
 <div class="container"> 
 
-<h1 style="text-align:center">Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction</h1> <br>
+<h2 style="text-align:center">Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction</h2> <br>
 <h4 style="text-align:center"><a href="https://lokender.github.io/">Lokender Tiwari<sup>1</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://sites.google.com/site/peterji1990">Pan Ji<sup>2</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://cs.adelaide.edu.au/~huy/home.php">Quoc-Huy Tran<sup>2</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://bbzh.github.io/">Bingbing Zhuang<sup>2</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://www.iiitd.edu.in/~anands/index.html">Saket Anand<sup>1</sup></a>&nbsp&nbsp&nbsp&nbsp<a href="https://cseweb.ucsd.edu/~mkchandraker/">Manmohan Chandraker<sup>2,3</sup></a>  </h4> 
 <h4 style="text-align:center"><a href="https://www.iiitd.ac.in/"><sup>1</sup>IIIT-Delhi</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="http://www.nec-labs.com/research-departments/media-analytics/media-analytics-home"><sup>2</sup>NEC Labs America </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://ucsd.edu/"><sup>3</sup>UCSD</a>  </h4>
 
 <h4 style="text-align:center"><div>In European Conference on Computer Vision (ECCV), 2020</div> </h4>
 
-
+<hr>
 
 <h2 style="text-align:center">DEMOS</h2>
 <!--   Icon Section   -->
 <div class="row center">
 <div class="col l8 offset-l2 m3 offset-m1 s12">
-	
+    
 <h4 style="text-align:center">RGB vs Pseudo RGB-D SLAM and Monocular Depth Prediction Demos (ECCV 2020 Demo Track)
-	<p align="center">
+    <p align="center">
 <iframe display="block" width="640" height="320" src="https://www.youtube.com/embed/gdY4yn0J4E0?autoplay=1"> </iframe> 
-		</p>
-	
+        </p>
+    
 <h4 style="text-align:center">KITTI Odometry Sequence 19.</h4>
-	<p align="center">
+    <p align="center">
 <iframe display="block" width="640" height="320" src="https://www.youtube.com/embed/OOPJpHexrdE?autoplay=1"> </iframe> 
-		</p>
+        </p>
 <h4 style="text-align:center">KITTI Odometry Sequence 11.</h4>
 
-	<p align="center">
-		<iframe width="640" height="320" src="https://www.youtube.com/embed/PMYI9j5vHOw?autoplay=1"> </iframe> 
-	</p>
+    <p align="center">
+        <iframe width="640" height="320" src="https://www.youtube.com/embed/PMYI9j5vHOw?autoplay=1"> </iframe> 
+    </p>
 <h4 style="text-align:center">TUM RGB-D Sequence freiburg3 Large Cabinet Validation.</h4>
 <p align="center">
 <iframe display="block" width="480" height="320" src="https://www.youtube.com/embed/MffXsKjy9W0?autoplay=1"></iframe>
@@ -62,7 +148,7 @@
 </div>
 
 
-
+<hr>
 <h2 style="text-align:center">ABSTRACT</h2>
 <p style="text-align:justify">
 Classical monocular Simultaneous Localization And Mapping (SLAM) and the recently emerging convolutional neural networks (CNNs) for monocular depth prediction represent two largely disjoint approaches towards building a 3D map of the surrounding environment. In this paper, we demonstrate that the coupling of these two by leveraging the strengths
@@ -70,68 +156,70 @@ of each mitigates the others shortcomings. Specifically, we propose a joint narr
 which then continues to contribute towards better pose and 3D structure estimation in the next iteration. We emphasize that our framework only requires unlabeled monocular videos in both training and inference stages, and yet is able to outperform state-of-the-art self-supervised monocular and stereo depth prediction networks (e.g., Monodepth2) and
 feature-based monocular SLAM system (i.e., ORB-SLAM). Extensive experiments on KITTI and TUM RGB-D datasets verify the superiority of our self-improving geometry-CNN framework.
 </p>
-
+<hr>
 <h2 style="text-align:center">PAPER</h2>
 <div style="text-align:center"> 
 <a href="https://arxiv.org/abs/2004.10681" target="_blank">
-<img class="responsive-img" src="./papers_imgs/prgbd_paper.png" width="100" >
+<img class="responsive-img" src="./paper_imgs/prgbd_paper.png" width="100" >
 </a>
 <h4>ECCV 2020</h4>
 </div>
 <div style="text-align:justify"> 
+    <hr>
 <h4>Citation</h4>
 <p>Lokender Tiwari, Pan Ji, Quoc-Huy Tran, Bingbing Zhuang, Saket Anand and Manmohan Chandraker, "Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction", In Proceedings of European Conference on Computer Vision, 2020.</p>
 <h4>Bibtex</h4>
 <pre>@inproceedings{tiwari2020pseudo,
     author={Tiwari, Lokender and Ji, Pan and Tran, Quoc-Huy and Zhuang, Bingbing and Anand, Saket 
- 	and Chandraker, Manmohan},
+    and Chandraker, Manmohan},
     title     = {Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction}, 
     booktitle = {European Conference on Computer Vision},
     year      = {2020}
 }
 </pre>
 </div>
+<hr>
 <h2 style="text-align:center">DOWNLOADS</h2>
 <div style="text-align:center"> 
 <a href="" target="_blank">
-<img class="responsive-img" src="./papers_imgs/github.png" width="100" >
+<img class="responsive-img" src="./paper_imgs/github.png" width="100" >
 </a>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
+
 <a href="" target="_blank">
-<img class="responsive-img" src="./papers_imgs/icon_zip.png" width="100" >
+<img class="responsive-img" src="./paper_imgs/icon_zip.png" width="100" >
 </a>
 <h4>Code (coming soon)  &nbsp&nbsp&nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Trained Models/Results </h4>
 </div>
-
+<hr>
 <h2 style="text-align:center">A SELF-SUPERVISED, SELF-IMPROVING FRAMEWORK</h2>
 <div style="text-align:center"> 
-<img class="responsive-img" src="./papers_imgs/self_improving_framework.png" width="600" >
+<img class="responsive-img" src="./paper_imgs/self_improving_framework.png" width="600" >
 <p>It alternates between pose refinement (blue arrows) and depth refinement (red arrows).</p>
 </div>
-
+<hr>
 <h2 style="text-align:center">QUALITATIVE DEPTH RESULTS</h2>
 <div style="text-align:center"> 
-<img class="responsive-img" src="./papers_imgs/qual_depth_far.png" width="800" >
+<img class="responsive-img" src="./paper_imgs/qual_depth_far.png" width="800" >
 <p>Qualitative depth evaluation results on KITTI Odometry test set. Improvement
 in depth prediction of farther scene points.</p>
-<img class="responsive-img" src="./papers_imgs/qual_depth.png" width="800">
+<img class="responsive-img" src="./paper_imgs/qual_depth.png" width="800">
 <p>Qualitative depth evaluation results on KITTI Raw Eigen split test set.
-MonoDepth2-M: MonoDepth2 trained using monocular images.</p>
+MonoDepth2-M: MonoDepth2 trained using monocular paper_imgs.</p>
 </div>
-
+<hr>
 <h2 style="text-align:center">QUALITATIVE POSE RESULTS</h2>
 <div style="text-align:center"> 
-<img class="responsive-img" src="./papers_imgs/qual_pose_kitti.png" width="600" >
+<img class="responsive-img" src="./paper_imgs/qual_pose_kitti.png" width="600" >
 <p>Qualitative pose evaluation results on KITTI Odometry sequences.</p>
 </div>
+<hr>
 
- <div id="footer">
-<div id="footer-text">
-<p>Last Updated July 2020.</p>
-</div>
-</div> 
+    <!-- Scroll to Top -->  
+    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
+    <!-- <div class="span6"><span class="left">Copyright 2021 Loke.</span></div> -->
 </body>
 </html>
