@@ -69,12 +69,6 @@ I am a Research Scientist at Visual Computing Group at <a href="https://www.tcs.
 <li>MHRD Graduate Fellowship, GATE (Top 4% in India), Jul 2012- Jun 2014</li>
 <li><a href="https://lokender.github.io/gold.html" target="_blank">Chancellor's Gold Medal</a> for academic excellence in undergraduate B.Tech CSE., 2008-2012</li> </ul>
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 19b4d994a678786ffb3539ebbb3dcf25d5c334af
 <hr>
 
 <h2 id="mentoring">Mentoring  </h2>
