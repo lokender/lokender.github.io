@@ -73,8 +73,6 @@ I am a Research Scientist at Visual Computing Group at <a href="https://www.tcs.
 <<<<<<< HEAD
 =======
 
-<hr>
-
 
 >>>>>>> 19b4d994a678786ffb3539ebbb3dcf25d5c334af
 <hr>
