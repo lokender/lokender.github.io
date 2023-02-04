@@ -71,23 +71,7 @@ I am a Research Scientist at Visual Computing Group at <a href="https://www.tcs.
 
 
 
-<hr>
 
-### Publications ###
-<div class="publications" id="publications">
-{%- for y in page.years %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}},patent=false]*  %}
-{% endfor %}
-</div>
-
-<hr>
-
-### Patents ###
-Go to : [Publications](/#publications)    
-<div class="publications" id="patents">
-            {% bibliography -f papers -q @*[patent=true]* %}
-</div>
 
 <hr>
 
