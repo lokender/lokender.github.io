@@ -196,7 +196,6 @@ keep_files:
   - .nojekyll
   - .git
 
-plugins_dir: [jekyll/scholar]
 # Plug-ins
 plugins:
   - jekyll-archives
@@ -205,7 +204,6 @@ plugins:
   - jekyll-imagemagick
   - jekyll-minifier
   - jekyll-paginate-v2
-  - jekyll/scholar
   - jekyll-sitemap
   - jekyll-link-attributes
   - jemoji
