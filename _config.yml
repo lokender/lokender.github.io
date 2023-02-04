@@ -196,7 +196,7 @@ keep_files:
   - .nojekyll
   - .git
 
-plugins_dir: [jekyll-scholar]
+plugins_dir: [jekyll/scholar]
 # Plug-ins
 plugins:
   - jekyll-archives
