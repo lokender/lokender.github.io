@@ -8,7 +8,7 @@ middle_name:
 last_name: Tiwari, Ph.D.
 email: #tiwarilokender@gmail.com
 # email: lokender.tiwari@tcs.com
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
+description: > # the ">" symbol means to ignore newline until "footer_text:"
   Dr. Lokender Tiwari, PhD
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
