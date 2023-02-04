@@ -245,6 +245,7 @@ display_tags: ['Computer Vision', 'Computer Graphics', 'Deep Learning', 'DummyPo
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
+bibliography: papers.bib
 
 scholar:
 
