@@ -31,7 +31,7 @@ I am a Research Scientist at Visual Computing Group at <a href="https://www.tcs.
    <li> Physics-Aware AR/VR/XR </li>
    <li> Robust and Reliable Deep Learning </li> </ul>
    </ul>
- [news](/#news) &nbsp; | &nbsp; [talks](/#talks) &nbsp; | &nbsp; [awards](/#awards) &nbsp; | &nbsp; [publications](/#publications) &nbsp; | &nbsp; [patents](/#patents) &nbsp; | &nbsp;[mentoring](/#mentoring) 
+ [news](/#news) &nbsp; | &nbsp; [talks](/#talks) &nbsp; | &nbsp; [awards](/#awards) &nbsp; | &nbsp; [publications](/publications/) &nbsp; | &nbsp; [patents](/#patents) &nbsp; | &nbsp;[mentoring](/#mentoring) 
  
  <hr>
 <h2 id="news">News</h2>

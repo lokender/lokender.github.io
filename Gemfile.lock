@@ -64,8 +64,6 @@ GEM
       webrick (~> 1.7)
     jekyll-archives (2.2.1)
       jekyll (>= 3.6, < 5.0)
-    jekyll-diagrams (0.10.0)
-      jekyll (>= 3.8, < 5.0)
     jekyll-email-protect (1.1.0)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
@@ -89,7 +87,6 @@ GEM
       jekyll (~> 4.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-twitter-plugin (2.1.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.13.0)
@@ -154,7 +151,6 @@ DEPENDENCIES
   httparty
   jekyll
   jekyll-archives
-  jekyll-diagrams
   jekyll-email-protect
   jekyll-feed
   jekyll-imagemagick
@@ -163,7 +159,6 @@ DEPENDENCIES
   jekyll-paginate-v2
   jekyll-scholar
   jekyll-sitemap
-  jekyll-twitter-plugin
   jemoji
   mini_racer
   unicode_utils
