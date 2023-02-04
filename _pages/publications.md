@@ -21,5 +21,5 @@ Go to : [Patents](/publications/#patents)
 ### Patents ###
 Go to : [Publications](/publications/#publications)    
 <div class="publications" id="patents">
-            {% bibliography -f papers -q @*[patent=true]* %}
+  {% bibliography -f papers -q @*[patent=true]* %}
 </div>
