@@ -1,1 +1,1 @@
-[Lokender Tiwari's Homepage](https://lokender.github.io) 
+[https://lokender.github.io/](https://lokender.github.io/)
