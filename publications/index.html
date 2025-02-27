@@ -162,16 +162,23 @@
           <!-- Hidden abstract block -->
           <div class="abstract hidden">
             <p>
-            Recovering temporally consistent 3D human body pose, shape and motion from a monocular video is a challenging task due to (self-)occlusions, poor lighting conditions, complex articulated body poses, depth ambiguity, and limited availability of annotated data. Further, doing a simple perframe estimation is insufficient as it leads to jittery and implausible results. In this paper, we propose a novel method for temporally consistent motion estimation from a monocular video. Instead of using generic ResNet-like features, our method uses a body-aware feature representation and an independent per-frame pose and camera initialization over a temporal window followed by a novel spatio-temporal feature aggregation by using a combination of self-similarity and self-attention over the body-aware features and the perframe initialization. Together, they yield enhanced spatiotemporal context for every frame by considering remaining past and future frames. These features are used to predict the pose and shape parameters of the human body model, which are further refined using an LSTM. Experimental results on the publicly available benchmark data show that our method attains significantly lower acceleration error and outperforms the existing state-of-the-art methods over all key quantitative evaluation metrics, including complex scenarios like partial occlusion, complex poses and even relatively low illumination.  
+            Generating realistic one-shot emotional talking head animation on arbitrary faces is a challenging problem, as it requires realistic emotions, head movements, identity preser vation, and accurate lip sync. Existing emotional talking face generation methods either fail to retain the identity information of arbitrary subjects owing to the limited variability of existing emotional datasets, or they fail to capture emotions accurately even if they preserve identity of arbitrary faces. Moreover, most of the methods rely on additional input videos for driving poses and/or or expressions
+on the generated video. For practical applications, it is in feasible to obtain driving videos of the same or different subject with variations in head pose, expressions etc. In this paper, we propose a novel approach for Audio-driven Emotional Talking Head generation from a single image, with emotion-controllable head pose generation. Unlike existing
+methods, our method does not require a driving video either for pose or emotions, and can generate different emotions and diverse head pose variations from input speech and a single image of an arbitrary subject in neutral emotion. Our method overcomes the limitations of existing emotional audio-visual datasets by learning a disentangled approach for optical flow computation approach for pose and expression. Using our proposed method of independently computing pose-driven and expression-driven optical flow,
+our image generation network can be pre-trained on a large dataset with greater pose variability but lacking emotion annotations. The expression flow generation branch is fine tuned on a smaller emotional dataset to accurately capture
+different emotions not present in the original dataset, while retaining the pose variability from the original dataset. We present extensive experiments to demonstrate the superior ity of our proposed method in generating talking head animation with accurate emotions, diverse head movements, and generalization to arbitrary faces.
+            
             </p>
           </div>
+
+          
 <!-- Hidden bibtex block -->
           <div class="bibtex hidden">
-            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">chanda2023enhanced</span><span class="p">,</span>
-  <span class="na">title</span> <span class="p">=</span> <span class="s">{Enhanced Spatio-Temporal Context for Temporally Consistent Robust 3D Human Motion Recovery from Monocular Videos}</span><span class="p">,</span>
-  <span class="na">author</span> <span class="p">=</span> <span class="s">{Chanda, Sushovan and Tiwari, Amogh and Tiwari, Lokender and Bhowmick, Brojeshwar and Sharma, Avinash and Barua, Hrishav}</span><span class="p">,</span>
-  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{ arXiv preprint arXiv:2311.11662 }</span><span class="p">,</span>
-  <span class="na">year</span> <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
+            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">Sinha_2025_WACV</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{DisFlowEm : One-Shot Emotional Talking Head Generation using Disentangled Pose and Expression Flow-Guidance}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Sinha, Sanjana and Bhowmick, Brojeshwar and Tiwari, Lokender and Chanda, Sushovan}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{ Proceedings of the Winter Conference on Applications of Computer Vision (WACV)}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
 <!--   <span class="na">demo</span> <span class="p">=</span> <span class="s">{https://drive.google.com/file/d/1nZuJlsQN2OqVXBobNNn336UK8dXNc3nC/view?usp=sharing}</span><span class="p">,</span> -->
 <span class="p">}</span></code></pre></figure>
           </div>
@@ -182,12 +189,6 @@
 </ol>
 
 
-
-
-
-
-
-  --------------------
   <h2 class="year">2023</h2>
   <ol class="bibliography">
 <li>
