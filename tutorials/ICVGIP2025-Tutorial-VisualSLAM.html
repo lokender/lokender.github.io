@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visual SLAM for Autonomous Driving anf Flying</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            height: 300px;
+            background-image: url('icvgip2025-tuts.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            backface-visibility: 10;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+        }
+
+        header h2 {
+            font-size: 2.0rem;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .section-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .section-content li {
+            margin: 5px 0;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+    .containernew {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 800px;
+      margin: 40px auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #0000;
+    }
+    .text-left {
+      flex: 1;
+      font-size: 1.2em;
+      margin-right: 20px;
+    }
+    .image-right img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>ICVGIP 2025</h1>
+        <h2>A Tutorial on</h2>
+        <h1>Visual SLAM for Autonomous Driving and Flying</h1>
+	    <h2><strong>IIT-Mandi</strong></h2>
+    </header>
+
+
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="https://lokender.github.io/ICVGIP2025-Tutorial-VisualSLAM.html#abstract">Abstract</a>
+        <a href="https://lokender.github.io/ICVGIP2025-Tutorial-VisualSLAM.html#schedule">Schedule</a>
+        <a href="https://lokender.github.io/ICVGIP2025-Tutorial-VisualSLAM.html#resources">References</a>
+        <a href="https://lokender.github.io/ICVGIP2025-Tutorial-VisualSLAM.html#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Course Info Section -->
+        <section id="Abstract">
+            <div class="section-title">Abstract</div>
+            <div class="section-content">
+                <p>
+The future of autonomous driving and flying lies in giving machines the power of sight. For autonomous driving and flying, Visual SLAM (vSLAM) is a critical technology that uses visual sensors to perceive the environment, offering a low-cost, lightweight alternatives. This tutorial motivates its focus on visual information by highlighting how vSLAM provides rich, pixel-level environmental data, mirroring the way humans navigate the world. We will tackle the core challenge of real-time pose estimation and mapping, allowing a vehicle or drone to localize itself and construct a 3D map of its surroundings simultaneously using only visual inputs. This approach is essential for applications where GPS signals are unreliable and pre-existing maps are unavailable. The tutorial will explore the evolution from classic geometric vSLAM methods to modern, learning-based techniques that address persistent challenges like dynamic environments, poor lighting conditions, and the inherent scale ambiguity of various camera setups.  </p>
+<br>
+
+
+<p>
+The tutorial is divided into three major sections followed by last section on open challenges and research directions. In the first section (Introduction to Visual SLAM), we will introduce and motivate the concept of SLAM, its categorization, various configuration based on sensors for autonomous driving and flying. We will discuss in detail the building blocks of a typical visual SLAM system e.g., pose estimation, 3D mapping, loop closure etc. In the second section (Classical SLAM systems  : Feature-based/sparse to Direct/Dense SLAM) , we will discuss two major type of SLAM approaches feature-based/spare and direct/dense SLAM. Particularly, we will discuss the working of key SLAM systems ORB-SLAM series and LSD SLAM in these two categories. In the third section (Learning Based SLAM Systems), we will discuss building block of learning based Visual SLAM systems. We will talk about key learning-based methods such as CNN-SLAM, Pseudo-RGBD SLAM, Droid-SLAM, including methods that represents the 3D world using implicit representations such as NeRF, Gaussian Splatting, Sign Distance Fields (SDFs). In the Last section, we will conclude with open challenges and research directions in the visual SLAM domain. </p>
+<br>
+                <!-- <ul>
+                    <li><strong>Instructor:</strong> <a href="https://lokender.github.io/">Dr. Lokender Tiwari</a></li>
+                    <li><strong>Coordinator:</strong> <a href="https://www.cse.iitd.ac.in/~chetan/">Prof. Chetan Arora</a></li>
+                    <li><strong>Lecture Timings:</strong> Wednesdays 3:30 PM to 5:00 PM, Fridays 5:00PM to 6:30 PM </li>
+		    <li><strong>Lecture Venue:</strong> LHC 521 </li>
+                </ul> -->
+            </div>
+        </section>
+
+ <div class="containernew">
+    <div class="text-left">
+    <h2> Brief Instructor Bio </h2>
+    <p>Dr. Lokender TIwari, is a Senior Research Scientist / Principal Investigator @ TCS Research, IIT-Delhi R&I Park. </p>
+    <br>
+    <p>[<a href="https://lokender.github.io/">Personal Webpage</a>]</p>
+    </div>
+    <div class="image-right">
+<img src="p1.png?text=Image" alt="Sample Image">
+    </div>
+  </div>
+
+        <!-- Schedule Section -->
+        <section id="Schedule">
+            <div class="section-title">Schedule</div>
+            <div class="section-content">
+
+                <ul>
+                    <li><strong>Section 1:</strong> Introduction to SLAM (45 Mins)  [<a href="">PDF</a>]</li>
+                    <li><strong>Section 2:</strong> Classical SLAM Systems : Feature-based/Sparse to Direct/Dense SLAM (60 Mins)  [<a href="">PDF</a>] </li>
+                    <li><strong>Section 3:</strong> Learning Based SLAM Systems (60 Mins)  [<a href="">PDF</a>] </li>
+                    <li><strong>Section 4:</strong> Open challenges and research directions (15 mins)  [<a href="">PDF</a>]  </li>
+                </ul>
+
+            </div>
+        </section>
+        
+        <!-- Resources Section -->
+        <section id="resources">
+            <div class="section-title">Sample References</div>
+            <div class="section-content">
+
+                <ol>
+                    <li>Lokender Tiwari, et al.  "Pseudo rgb-d for self-improving monocular slam and depth prediction." ECCV, 2020.  [<a href="https://lokender.github.io/projects/pseudo-rgbd-slam/">Project Page</a>]</li>
+                    <li>Lokender Tiwari, et al. "A review on monocular tracking and mapping: from model-based to data-driven methods." The Visual Computer 39.11 (2023)  [<a href="https://link.springer.com/article/10.1007/s00371-022-02702-z">PDF</a>] </li>
+                    <li>Lokender Tiwari, et al.  "DGSAC: Density guided sampling and consensus” IEEE WACV, 2018   [<a href="https://lokender.github.io/assets/pdf/TiwariAnand_WACV2018_DGSAC.pdf">PDF</a>] </li>
+                    <li>Mur-Artal, Raul, and Juan D. Tardós. "Orb-slam2: An open-source slam system for monocular, stereo, and rgb-d cameras." IEEE transactions on robotics 33.5 (2017): 1255-1262.  [<a href="https://128.84.21.199/pdf/1610.06475.pdf">PDF</a>]  </li>
+
+
+                    <li>Campos, Carlos, et al. "Orb-slam3: An accurate open-source library for visual, visual–inertial, and multimap slam." IEEE transactions on robotics 37.6 (2021): 1874-1890.   [<a href="https://arxiv.org/pdf/2007.11898">PDF</a>]</li>
+                    <li>Teed, Zachary, and Jia Deng. "Droid-slam: Deep visual slam for monocular, stereo, and rgb-d cameras." Advances in neural information processing systems 34 (2021): 16558-16569.   [<a href="https://arxiv.org/pdf/2108.10869">PDF</a>] </li>
+                    <li>Engel, Jakob, Thomas Schöps, and Daniel Cremers. "LSD-SLAM: Large-scale direct monocular SLAM." European conference on computer vision. Cham: Springer International Publishing, 2014.    [<a href="https://link.springer.com/content/pdf/10.1007/978-3-319-10605-2_54.pdf">PDF</a>] </li>
+                    <li>Murai, Riku, Eric Dexheimer, and Andrew J. Davison. "MASt3R-SLAM: Real-time dense SLAM with 3D reconstruction priors." Proceedings of the Computer Vision and Pattern Recognition Conference. 2025.   [<a href="https://arxiv.org/pdf/2412.12392">PDF</a>]  </li>
+
+                    <li>Keetha, Nikhil, et al. "Splatam: Splat track & map 3d gaussians for dense rgb-d slam." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2024.   [<a href="https://spla-tam.github.io/">Project Page</a>] </li>
+                    <li>Tateno, Keisuke, et al. "Cnn-slam: Real-time dense monocular slam with learned depth prediction." Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.    [<a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Tateno_CNN-SLAM_Real-Time_Dense_CVPR_2017_paper.pdf">PDF</a>] </li>
+                   
+                </ol>
+
+	    </div>
+        </section>
+        
+        
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-title">Contact Information</div>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Instructor:</strong> Dr. Lokender Tiwari - lokender.work@gmail.com</li>
+          
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    
+    <!-- Footer Section -->
+    <footer>
+      <!--  <p>&copy; 2025 University of Example | CS 101</p> -->
+    </footer>
+	
+
+
+</body></html>
