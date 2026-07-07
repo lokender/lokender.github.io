@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokender Tiwari, PhD - Academic Profile</title>
@@ -15,6 +16,11 @@
             --border-color: #e0e0e0;
             --soothing-highlight: #e8f4fa;
             --highlight-border: #b3d4fc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px; /* Adds a bit of breathing room when jumping to sections */
         }
 
         body {
@@ -37,13 +43,35 @@
 
         /* Header Styles */
         header {
+            position: relative;
             display: flex;
             align-items: flex-start;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 30px;
-            margin-bottom: 40px;
+            border-bottom: 0px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 5px; /* Reduced to accommodate the new nav bar */
         }
 
+        /* Top Right Social Icons */
+        .top-social-bar {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-social-bar a {
+            color: #95a5a6; /* Subtle grey color */
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .top-social-bar a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px); /* Slight jump effect on hover */
+        }
+        
         .profile-pic {
             width: 200px;
             height: 200px;
@@ -61,34 +89,27 @@
         }
 
         .header-info h1 { margin: 0 0 5px 0; color: var(--primary-color); font-size: 2.5rem; }
-        .header-info h2 { margin: 0 0 10px 0; font-size: 1.2rem; color: var(--secondary-color); font-weight: 500; }
+        .header-info h2 { margin: 0 0 5px 0; font-size: 1.2rem; color: var(--secondary-color); font-weight: 500; }
         .header-info p { margin: 5px 0; font-size: 1rem; }
         .header-info a { color: var(--accent-color); text-decoration: none; }
         .header-info a:hover { text-decoration: underline; }
-        .awards-highlight { font-size: 0.95rem; color: #d35400; font-weight: 600; margin-top: 10px; }
+        .awards-highlight { font-size: 0.95rem; color: #b8860b; font-weight: 600; margin-top: 10px; }
 
         /* Button Bars */
         .button-bar {
             display: flex;
-            gap: 10px;
+            gap: 5px;
             flex-wrap: wrap;
-            margin-top: 15px;
-        }
-        
-        .button-bar-nav {
             margin-top: 10px;
         }
 
-        .btn-social, .btn-nav {
+        .btn-social {
             padding: 6px 14px;
             border-radius: 4px;
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 600;
             transition: all 0.2s ease;
-        }
-
-        .btn-social {
             background-color: #f8f9fa;
             color: var(--secondary-color);
             border: 1px solid #dcdcdc;
@@ -100,22 +121,43 @@
             border-color: var(--accent-color);
         }
 
-        .btn-nav {
-            background-color: var(--primary-color);
-            color: white;
-            border: 1px solid var(--primary-color);
+        /* Navigation Tags below header */
+        .section-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+          
         }
 
-        .btn-nav:hover {
+        .nav-tag {
+            background-color: var(--soothing-highlight);
+            color: var(--accent-color);
+            border: 1px solid var(--highlight-border);
+            border-bottom: 2px solid var(--accent-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .nav-tag:hover {
             background-color: var(--accent-color);
+            color: white;
             border-color: var(--accent-color);
+            text-decoration: none;
         }
 
         /* General Section Styles */
         section { margin-bottom: 40px; }
         h3 {
             color: var(--primary-color);
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 0px solid var(--border-color);
             padding-bottom: 8px;
             margin-bottom: 20px;
             font-size: 1.5rem;
@@ -151,8 +193,6 @@
             overflow: hidden;
         }
 
-        /* --- HIGHLIGHT LOGIC --- */
-        /* To highlight a publication, simply add 'highlighted' to the div's class. Example: <div class="pub-card highlighted"> */
         .pub-card.highlighted {
             background-color: var(--soothing-highlight);
             border-color: var(--highlight-border);
@@ -268,7 +308,7 @@
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; align-items: center; }
             .profile-pic { margin: 0 0 25px 0; }
-            .button-bar { justify-content: center; }
+            .button-bar, .section-nav { justify-content: center; }
             .date-right { float: none; display: block; margin-top: 5px; }
             
             .pub-card { flex-direction: column; }
@@ -281,7 +321,7 @@
 <body>
 
 <div class="container">
-    <header>
+    <!-- <header>
         <div class="profile-pic"><img src="https://raw.githubusercontent.com/lokender/lokender.github.io/refs/heads/master/tutorials/p10.jpeg" width="auto" height="auto" alt="p10.jpeg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"></div>
         <div class="header-info">
             <h1>Lokender Tiwari, PhD</h1>
@@ -290,33 +330,54 @@
             <p><strong>Email:</strong> <a href="mailto:lokender.work@gmail.com">lokender.work@gmail.com</a> | <strong>Website:</strong> <a href="https://lokender.github.io/" target="_blank">lokender.github.io</a></p>
             <p class="awards-highlight">Young Scientist Award | Doctoral Dissertation Award | University Gold Medalist</p>
             
-            <div class="button-bar">
-                <a href="https://github.com/lokender" target="_blank" class="btn-social">GitHub</a>
-                <a href="https://www.linkedin.com/in/lokender"  target="_blank" class="btn-social">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=uHfnun4AAAAJ" target="_blank" class="btn-social">Google Scholar</a>
-                <a href="https://twitter.com/lokendertiwari" target="_blank" class="btn-social">Twitter</a>
-                <a href="#" target="_blank" class="btn-social">DBLP</a>
-            </div>        
+                <a href="https://github.com/lokender" target="_blank" >GitHub</a> | 
+                <a href="https://www.linkedin.com/in/lokender"  target="_blank" >LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=uHfnun4AAAAJ" target="_blank" >Google Scholar</a>
+                <a href="https://twitter.com/lokendertiwari" target="_blank" >Twitter</a>
+                <a href="#" target="_blank" >DBLP</a>
+                    </div>
+    </header> -->
 
-<!--             <div class="button-bar button-bar-nav">
-                <a href="#teaching" class="btn-nav">Teaching</a>
-                <a href="#workshops" class="btn-nav">Tutorials</a>
-                <a href="#photos" class="btn-nav">Photos</a>
-            </div> -->
+    <header>
+        <div class="top-social-bar">
+            <a href="https://github.com/lokender" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/lokender" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://scholar.google.com/citations?user=uHfnun4AAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://twitter.com/lokendertiwari" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" title="DBLP"><i class="fas fa-database"></i></a>
         </div>
+
+        <div class="profile-pic"><img src="https://raw.githubusercontent.com/lokender/lokender.github.io/refs/heads/master/tutorials/p10.jpeg" width="auto" height="auto" alt="p10.jpeg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"></div>
+        <div class="header-info">
+            <h1>Lokender Tiwari, PhD</h1>
+            <h2>Head of Computer Vision at BotLab Dynamics / Vayudh<br>
+                Ex. Senior Research Scientist @ TCS Research</h2>
+            <p><strong>Email:</strong> <a href="mailto:lokender.work@gmail.com">lokender.work@gmail.com</a> | <strong>Website:</strong> <a href="https://lokender.github.io/" target="_blank">lokender.github.io</a></p>
+            <p class="awards-highlight">Young Scientist Award | Doctoral Dissertation Award | University Gold Medalist</p>
+            </div>
     </header>
 
+    <nav class="section-nav">
+        <a href="#about" class="nav-tag">About</a>
+        <a href="#education" class="nav-tag">Education</a>
+        <a href="#experience" class="nav-tag">Industry Exp</a>
+        <a href="#teaching" class="nav-tag">Teaching Exp</a>
+        <a href="#publications" class="nav-tag">Publications</a>
+        <a href="#patents" class="nav-tag">Patents</a>
+        <a href="#awards" class="nav-tag">Awards</a>
+        <a href="#workshops" class="nav-tag">Community</a>
+    </nav>
+
     <section id="about">
-        <h3>About</h3>
+        <h2>About</h2>
       <p>
         Currently, I am the Head of Computer Vision/AI at <a href="https://www.botlabdynamics.com/" rel="external nofollow noopener" target="_blank">BotLab Dynamics</a> /  <a href="https://www.vayudh.com/" rel="external nofollow noopener" target="_blank">Vayudh</a>, where I lead the development of next-generation intelligence for drones. My team's mission is to engineer robust, autonomous systems capable of thriving in highly challenging, real-world scenarios. 
-        <!-- Our core focus spans the entire spectrum of drone intelligence, seamlessly combining computer vision with advanced sensor fusion and signal intelligence. This multi-modal appraoch enables comprehensive capabilities such as situational awareness, autonomous navigation, real-time tracking and obstacle avoidance.  -->
         <br>
         <br>
         Prior ot this, I spent 5+ years as a Senior Research Scientist and Principal Investigator at <a href="https://www.tcs.com/tcs-research" rel="external nofollow noopener" target="_blank">TCS Research, IIT-Delhi R&I Park</a>. Leading a dedicated research team, I drove initiatives at the intersection of Computer Vision, Deep Learning, and Graphics. I oversaw the full lifecycle of innovation, from formulating research strategies and mentoring scientists and researchers to piloting advanced prototyps with enterprise clients. 
         <br>
         <br>    
-        Prior to joining TCS Research, I worked at <a href="https://www.nec-labs.com/research-departments/media-analytics/media-analytics-people" rel="external nofollow noopener" target="_blank">NEC Laboratories America</a>, with <a href="https://www.nec.com/en/global/rd/special/pinnacle/manmohan_chandraker.html" rel="external nofollow noopener" target="_blank">Prof. Manmohan Chandraker</a>, <a href="https://www.linkedin.com/in/quochuytran" rel="external nofollow noopener" target="_blank">Dr. Quoc-Huy Tran</a>, and <a href="https://sites.google.com/view/panji530" rel="external nofollow noopener" target="_blank">Dr. Pan Ji</a>, where I developed world's first <a href="https://lokender.github.io/projects/pseudo-rgbd-slam/" rel="external nofollow noopener" target="_blank">self-improving framework for SLAM</a>. I received my PhD from <a href="https://www.iiitd.edu.in/" rel="external nofollow noopener" target="_blank">IIIT-Delhi</a>, with the Doctoral Dissertation Award. I was advised by <a href="https://faculty.iiitd.ac.in/~anands/index.html/" rel="external nofollow noopener" target="_blank">Dr. Saket Anand</a> and funded by prestegious <a href="https://phd.dic.gov.in/" rel="external nofollow noopener" target="_blank">Visvesvarya PhD fellowship</a>. I am the recipient of <a href="https://lokender.github.io/photos/#gold" target="_blank" rel="external nofollow noopener">Chancellor’s Gold Medal</a> for academic excellence in B.Tech (Computer Science and Engineering) 2008-2012.</p>
+        Prior to joining TCS Research, I worked at <a href="https://www.nec-labs.com/research-departments/media-analytics/media-analytics-people" rel="external nofollow noopener" target="_blank">NEC Laboratories America</a>, with <a href="https://www.nec.com/en/global/rd/special/pinnacle/manmohan_chandraker.html" rel="external nofollow noopener" target="_blank">Prof. Manmohan Chandraker</a>, <a href="https://www.linkedin.com/in/quochuytran" rel="external nofollow noopener" target="_blank">Dr. Quoc-Huy Tran</a>, and <a href="https://sites.google.com/view/panji530" rel="external nofollow noopener" target="_blank">Dr. Pan Ji</a>, where I developed world's first <a href="https://lokender.github.io/pseudo_rgbd.html" rel="external nofollow noopener" target="_blank">self-improving framework for SLAM</a>. I received my PhD from <a href="https://www.iiitd.edu.in/" rel="external nofollow noopener" target="_blank">IIIT-Delhi</a>, with the Doctoral Dissertation Award. I was advised by <a href="https://faculty.iiitd.ac.in/~anands/index.html/" rel="external nofollow noopener" target="_blank">Dr. Saket Anand</a> and funded by prestegious <a href="https://phd.dic.gov.in/" rel="external nofollow noopener" target="_blank">Visvesvarya PhD fellowship</a>. I am the recipient of <a href="https://lokender.github.io/photos.html" target="_blank" rel="external nofollow noopener">Chancellor’s Gold Medal</a> for academic excellence in B.Tech (Computer Science and Engineering) 2008-2012.</p>
 
     </section>
 
@@ -329,6 +390,30 @@
             <li><strong>Deep Learning:</strong> Machine Unlearning, Adversarial Attacks & Defense, and Hardware-Aware Modeling, AI on Edge</li>
             <li><strong>Robust Estimation:</strong> Probabilistic and Statistical Modeling</li>
             <li><strong>Application Areas:</strong> Defense, Industry 4.0/5.0, Entertainment & Rehabilitation, E-Commerce & Gaming</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h3>Education</h3>
+        <ul class="no-bullets">
+            <li>
+                <span class="degree-title">Ph.D. in CSE (Computer Vision & Deep Learning)</span> <span class="date-right">Jul 2014 - Mar 2021 (Defended)</span>
+                <span class="institution">IIIT-Delhi, India</span>
+                <i>Thesis</i>: Robust Scene Understanding  | <i>Adviser</i>: <a href="https://www.iiitd.edu.in/~anands/index.html"> Dr. Saket Anand</a><br>
+                <span style="color: #b8860b; font-weight: 500;"><i>Visvesvarya PhD Fellow</i> | <i>Doctoral Dissertation Award</i> | <i>US Patent Granted</i></span>
+            </li>
+            <hr class="divider">
+            <li>
+                <span class="degree-title">M.Tech in CSE</span> <span class="date-right">Jul 2012 - Jul 2014</span>
+                <span class="institution">CDAC, India</span>
+                <i>Thesis</i>: Robust Camera Captured Image Mosaicking for Document Digitization and OCR Processing 
+            </li>
+            <hr class="divider">
+            <li>
+                <span class="degree-title">B.Tech in CSE</span> <span class="date-right">Jul 2008 - Jul 2012</span>
+                <span class="institution">Faculty of Engineering & Technology, VBSPU, India</span>
+                <span style="color: #b8860b; font-weight: 500;"><i>Chancellor's Gold Medal (Rank-1)</i> | <i>University Topper</i></span>
+            </li>
         </ul>
     </section>
 
@@ -351,8 +436,6 @@
                     <li><i>Notable Awards</i>: <b>Best Paper Runner Up @ 3D4S, CVPR 2026</b> | <b>Best Oral Paper Award @ ICVGIP'25</b> | Young Scientist Award | Innovation Pride Award | Top Seeds & Special Initiative Award.</li>
                     <li><i>Media Highlights</i>: <a href="https://techxplore.com/news/2021-10-deepdraper-technique-people.html"> TechXplore</a> | <a href="https://www.gadgets360.com/science/news/deepdraper-virtual-clothes-try-on-3d-avatar-tool-prediction-technology-tcs-research-india-2590950"> NDTV Gadgets360</a> | <a href="https://www.businessapac.com/india-deepdraper-creates-a-3d-avatar/"> Business APAC</a></li>
                 </ul>
-
-
             </li>
             <hr class="divider">
             <li>
@@ -363,50 +446,7 @@
         </ul>
     </section>
 
-    <section id="education">
-        <h3>Education</h3>
-        <ul class="no-bullets">
-            <li>
-                <span class="degree-title">Ph.D. in CSE (Computer Vision & Deep Learning)</span> <span class="date-right">Jul 2014 - Mar 2021 (Defended)</span>
-                <span class="institution">IIIT-Delhi, India</span>
-                <i>Thesis</i>: Robust Scene Understanding  | <i>Adviser</i>: <a href="https://www.iiitd.edu.in/~anands/index.html"> Dr. Saket Anand</a><br>
-                <i>Visvesvarya PhD Fellow</i> | <i>Doctoral Dissertation Award</i> | <i>US Patent Granted</i>
-            </li>
-            <hr class="divider">
-            <li>
-                <span class="degree-title">M.Tech in CSE</span> <span class="date-right">Jul 2012 - Jul 2014</span>
-                <span class="institution">CDAC, India</span>
-                <i>Thesis</i>: Robust Camera Captured Image Mosaicking for Document Digitization and OCR Processing 
-            </li>
-            <hr class="divider">
-            <li>
-                <span class="degree-title">B.Tech in CSE</span> <span class="date-right">Jul 2008 - Jul 2012</span>
-                <span class="institution">Faculty of Engineering & Technology, VBSPU, India</span>
-                <i>University Gold Medal (Rank-1)</i> | <i>University Topper</i> 
-                            </li>
-        </ul>
-    </section>
-
-    <section id="awards">
-        <h3>Awards & Fellowships</h3>
-        <ul>
-            <li><span class="date-right">2026</span> Best Oral Paper Runner-up Award at 3D4S Workshop, CVPR 2026, Denver USA.</li>
-            <li><span class="date-right">2025</span> Best Oral Paper Award at ICVGIP 2025, IIT Mandi.</li>
-            <li><span class="date-right">2023</span> Young Scientist Award, Awarded by TCS Research.</li>
-            <li><span class="date-right">2021</span> Doctoral Dissertation Award by IIIT-Delhi.</li>
-            <li><span class="date-right">2018</span> IEEE WACV'2018 PhD Forum Award.</li>
-            <li><span class="date-right">2017</span> Best Poster Award (2nd), Research Showcase 2017, held at IIIT-Delhi.</li>
-            <li><span class="date-right">2016</span> Best Doctoral Symposium Award (3rd), ICVGIP'2016, held at IIT-Guwahati.</li>
-            <li><span class="date-right">2016</span> IEEE Signal Processing Society Travel Award.</li>
-            <li><span class="date-right">2015</span> Selected (13/250) for Prototype Stage of Mahindra Rise Driverless Car Challenge.</li>
-            <li><span class="date-right">Jul 2014-Jul 2019</span> Visvesvarya Ph.D. Fellowship.</li>
-            <li><span class="date-right">Jul 2012-Jun 2014</span> Graduate Fellowship, GATE.</li>
-            <li><span class="date-right">Feb 2013</span> <a href="https://lokender.github.io/photos.html">University Gold Medal (Rank-1) for Academic Excellence (B.Tech)</a>.</li>
-            <li><span class="date-right">Dec 2010</span> MHRD & DST Award for 3rd Science Conclave at IIIT-Allahabad.</li>
-        </ul>
-    </section>
-
-        <section id="teaching">
+    <section id="teaching">
         <h3>Teaching Experience</h3>
         <h4>As Full Instructor</h4>
         <ul>
@@ -433,21 +473,6 @@
         <h3>Publications</h3>
 
         <h4>Journals</h4>
-        
-        <!-- <div class="pub-card highlighted" id="pub-j3"> -->
-        <!-- <div class="pub-card" id="pub-j3">
-            <div class="pub-year-bg">2026</div>
-            <div class="pub-image"></div>
-            <div class="pub-content">
-                <div class="pub-title">[3] GLORA: Lifelong LLM Unlearning via Grassmannian Subspace Tracking</div>
-                <div class="pub-authors">Lokender Tiwari</div>
-                <div class="pub-venue">In Transaction on Machine Learning Research (TMLR) <span class="tag">Under Submission</span></div>
-                <div class="pub-buttons">
-                    <a href="#" class="pub-btn">PDF</a>
-                </div>
-            </div>
-        </div> -->
-
         <div class="pub-card" id="pub-j2">
             <div class="pub-year-bg">2026</div>
             <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/ultra.png" alt="Publication Image"></div>
@@ -475,20 +500,6 @@
         </div>
 
         <h4>Conferences/Workshops/Preprints</h4>
-
-        <!-- <div class="pub-card" id="pub-c17">
-            <div class="pub-year-bg">2027</div>
-            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/toflight.png" alt="Publication Image"></div>
-            <div class="pub-content">
-                <div class="pub-title">[17] ToFLIGHT Ultra-Lightweight ToF Guided Metric Depth Estimation</div>
-                <div class="pub-authors">Lokender Tiwari</div>
-                <div class="pub-venue">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) <span class="tag">Under Submission</span></div>
-                <div class="pub-buttons">
-                    <a href="#" class="pub-btn">PDF</a>
-                </div>
-            </div>
-        </div> -->
-
         <div class="pub-card" id="pub-c16">
             <div class="pub-year-bg">2026</div>
             <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/faqem.png" alt="Publication Image"></div>
@@ -740,8 +751,6 @@
 
     </section>
     
-
-
     <section id="patents">
         <h3>Patents Granted / Published</h3>
         <p><strong>Summary:</strong> 6 Granted and 7 Published</p>
@@ -762,15 +771,22 @@
         </ul>
     </section>
 
-    <section id="tech-transferred">
-        <h3>Technologies Developed / Transferred</h3>
+    <section id="awards">
+        <h3>Awards & Fellowships</h3>
         <ul>
-            <li>3D Garments Virtual Try-on for TCS Business Unit</li>
-            <li>3D Human Shape and Motion Recovery for TCS Business Unit</li>
-            <li>2D Paintings to 3D Immersive, Explorable Environments for TCS Business Unit</li>
-            <li>Gen AI-Powered Interactive 3D Content Generation & Composition in XR for TCS Business Unit</li>
-            <!-- <li>Real-Time 3D Drone Video Stabilization, BotLab Dynamics Product</li>
-            <li>Real-Time AI-Powered ToF-Dense Depth for Obstacle Avoidance, BotLab Dynamics Product</li> -->
+            <li><span class="date-right">2026</span> Best Oral Paper Runner-up Award at 3D4S Workshop, CVPR 2026, Denver USA.</li>
+            <li><span class="date-right">2025</span> Best Oral Paper Award at ICVGIP 2025, IIT Mandi.</li>
+            <li><span class="date-right">2023</span> Young Scientist Award, Awarded by TCS Research.</li>
+            <li><span class="date-right">2021</span> Doctoral Dissertation Award by IIIT-Delhi.</li>
+            <li><span class="date-right">2018</span> IEEE WACV'2018 PhD Forum Award.</li>
+            <li><span class="date-right">2017</span> Best Poster Award (2nd), Research Showcase 2017, held at IIIT-Delhi.</li>
+            <li><span class="date-right">2016</span> Best Doctoral Symposium Award (3rd), ICVGIP'2016, held at IIT-Guwahati.</li>
+            <li><span class="date-right">2016</span> IEEE Signal Processing Society Travel Award.</li>
+            <li><span class="date-right">2015</span> Selected (13/250) for Prototype Stage of Mahindra Rise Driverless Car Challenge.</li>
+            <li><span class="date-right">Jul 2014-Jul 2019</span> Visvesvarya Ph.D. Fellowship.</li>
+            <li><span class="date-right">Jul 2012-Jun 2014</span> Graduate Fellowship, GATE.</li>
+            <li><span class="date-right">Feb 2013</span> <a href="https://lokender.github.io/photos.html">University Gold Medal (Rank-1) for Academic Excellence (B.Tech)</a>.</li>
+            <li><span class="date-right">Dec 2010</span> MHRD & DST Award for 3rd Science Conclave at IIIT-Allahabad.</li>
         </ul>
     </section>
 
@@ -835,11 +851,6 @@
             <li>Keynote talk on Scene Understanding at BITCON 2021, BITS Durg.</li>
         </ul>
     </section>
-
-    <!-- <section id="photos">
-        <h3>Photos</h3>
-        <p>[You can add your image galleries or conference photos here]</p>
-    </section> -->
 
 </div>
 
