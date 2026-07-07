@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokender Tiwari, PhD - Academic Profile</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #2980b9;
+            --text-color: #333;
+            --bg-color: #f4f6f7;
+            --container-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --soothing-highlight: #e8f4fa;
+            --highlight-border: #b3d4fc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: var(--container-bg);
+            padding: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 14px;
+            margin-right: 40px;
+            border: 4px solid var(--accent-color);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .header-info h1 { margin: 0 0 5px 0; color: var(--primary-color); font-size: 2.5rem; }
+        .header-info h2 { margin: 0 0 10px 0; font-size: 1.2rem; color: var(--secondary-color); font-weight: 500; }
+        .header-info p { margin: 5px 0; font-size: 1rem; }
+        .header-info a { color: var(--accent-color); text-decoration: none; }
+        .header-info a:hover { text-decoration: underline; }
+        .awards-highlight { font-size: 0.95rem; color: #d35400; font-weight: 600; margin-top: 10px; }
+
+        /* Button Bars */
+        .button-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .button-bar-nav {
+            margin-top: 10px;
+        }
+
+        .btn-social, .btn-nav {
+            padding: 6px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-social {
+            background-color: #f8f9fa;
+            color: var(--secondary-color);
+            border: 1px solid #dcdcdc;
+        }
+
+        .btn-social:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+        }
+
+        .btn-nav {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-nav:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* General Section Styles */
+        section { margin-bottom: 40px; }
+        h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h4 { color: var(--secondary-color); margin-bottom: 10px; font-size: 1.2rem; margin-top: 25px; }
+        
+        /* List Styles */
+        ul { list-style-type: disc; padding-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 12px; }
+        .no-bullets { list-style-type: none; padding-left: 0; }
+        
+        .date-right { float: right; font-style: italic; color: #7f8c8d; font-size: 0.95rem; }
+        .job-title, .degree-title { font-weight: 600; color: var(--primary-color); }
+        .institution { font-style: italic; color: #555; display: block; margin-bottom: 5px; }
+        .patent-id { font-weight: bold; color: var(--secondary-color); }
+        
+        hr.divider { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
+
+        /* Publication Card Styles */
+        .pub-card {
+            display: flex;
+            flex-direction: row;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            overflow: hidden;
+        }
+
+        /* --- HIGHLIGHT LOGIC --- */
+        /* To highlight a publication, simply add 'highlighted' to the div's class. Example: <div class="pub-card highlighted"> */
+        .pub-card.highlighted {
+            background-color: var(--soothing-highlight);
+            border-color: var(--highlight-border);
+            box-shadow: 0 4px 8px rgba(41, 128, 185, 0.1);
+        }
+
+        .pub-image {
+            width: 180px;
+            height: 100px;
+            background-color: #ffffff;
+            margin-right: 20px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #aaa;
+            border-radius: 0px;
+            border: 0px solid #ddd;
+            overflow: hidden;
+        }
+
+        .pub-image img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+
+        .pub-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 50px; 
+            z-index: 1;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .pub-authors {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .pub-venue {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .pub-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pub-btn {
+            padding: 4px 12px;
+            border: 1px solid var(--text-color);
+            background: transparent;
+            color: var(--text-color);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .pub-btn:hover {
+            background: var(--text-color);
+            color: white;
+        }
+
+        .pub-year-bg {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 3rem;
+            font-weight: bold;
+            color: rgba(0,0,0,0.04);
+            z-index: 0;
+            line-height: 1;
+        }
+
+        .tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 5px;
+            display: inline-block;
+            vertical-align: middle;
+            font-style: normal;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; align-items: center; }
+            .profile-pic { margin: 0 0 25px 0; }
+            .button-bar { justify-content: center; }
+            .date-right { float: none; display: block; margin-top: 5px; }
+            
+            .pub-card { flex-direction: column; }
+            .pub-image { width: 100%; height: 160px; margin-bottom: 15px; margin-right: 0; }
+            .pub-content { padding-right: 0; }
+            .pub-year-bg { top: 10px; right: 10px; font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="profile-pic"><img src="https://raw.githubusercontent.com/lokender/lokender.github.io/refs/heads/master/tutorials/p10.jpeg" width="auto" height="auto" alt="p10.jpeg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"></div>
+        <div class="header-info">
+            <h1>Lokender Tiwari, PhD</h1>
+            <h2>Head of Computer Vision at BotLab Dynamics / Vayudh<br>
+                Ex. Senior Research Scientist @ TCS Research</h2>
+            <p><strong>Email:</strong> <a href="mailto:lokender.work@gmail.com">lokender.work@gmail.com</a> | <strong>Website:</strong> <a href="https://lokender.github.io/" target="_blank">lokender.github.io</a></p>
+            <p class="awards-highlight">Young Scientist Award | Doctoral Dissertation Award | University Gold Medalist</p>
+            
+            <div class="button-bar">
+                <a href="https://github.com/lokender" target="_blank" class="btn-social">GitHub</a>
+                <a href="https://www.linkedin.com/in/lokender"  target="_blank" class="btn-social">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=uHfnun4AAAAJ" target="_blank" class="btn-social">Google Scholar</a>
+                <a href="https://twitter.com/lokendertiwari" target="_blank" class="btn-social">Twitter</a>
+                <a href="#" target="_blank" class="btn-social">DBLP</a>
+            </div>        
+
+<!--             <div class="button-bar button-bar-nav">
+                <a href="#teaching" class="btn-nav">Teaching</a>
+                <a href="#workshops" class="btn-nav">Tutorials</a>
+                <a href="#photos" class="btn-nav">Photos</a>
+            </div> -->
+        </div>
+    </header>
+
+    <section id="about">
+        <h3>About</h3>
+      <p>
+        Currently, I am the Head of Computer Vision/AI at <a href="https://www.botlabdynamics.com/" rel="external nofollow noopener" target="_blank">BotLab Dynamics</a> /  <a href="https://www.vayudh.com/" rel="external nofollow noopener" target="_blank">Vayudh</a>, where I lead the development of next-generation intelligence for drones. My team's mission is to engineer robust, autonomous systems capable of thriving in highly challenging, real-world scenarios. 
+        <!-- Our core focus spans the entire spectrum of drone intelligence, seamlessly combining computer vision with advanced sensor fusion and signal intelligence. This multi-modal appraoch enables comprehensive capabilities such as situational awareness, autonomous navigation, real-time tracking and obstacle avoidance.  -->
+        <br>
+        <br>
+        Prior ot this, I spent 5+ years as a Senior Research Scientist and Principal Investigator at <a href="https://www.tcs.com/tcs-research" rel="external nofollow noopener" target="_blank">TCS Research, IIT-Delhi R&I Park</a>. Leading a dedicated research team, I drove initiatives at the intersection of Computer Vision, Deep Learning, and Graphics. I oversaw the full lifecycle of innovation, from formulating research strategies and mentoring scientists and researchers to piloting advanced prototyps with enterprise clients. 
+        <br>
+        <br>    
+        Prior to joining TCS Research, I worked at <a href="https://www.nec-labs.com/research-departments/media-analytics/media-analytics-people" rel="external nofollow noopener" target="_blank">NEC Laboratories America</a>, with <a href="https://www.nec.com/en/global/rd/special/pinnacle/manmohan_chandraker.html" rel="external nofollow noopener" target="_blank">Prof. Manmohan Chandraker</a>, <a href="https://www.linkedin.com/in/quochuytran" rel="external nofollow noopener" target="_blank">Dr. Quoc-Huy Tran</a>, and <a href="https://sites.google.com/view/panji530" rel="external nofollow noopener" target="_blank">Dr. Pan Ji</a>, where I developed world's first <a href="https://lokender.github.io/projects/pseudo-rgbd-slam/" rel="external nofollow noopener" target="_blank">self-improving framework for SLAM</a>. I received my PhD from <a href="https://www.iiitd.edu.in/" rel="external nofollow noopener" target="_blank">IIIT-Delhi</a>, with the Doctoral Dissertation Award. I was advised by <a href="https://faculty.iiitd.ac.in/~anands/index.html/" rel="external nofollow noopener" target="_blank">Dr. Saket Anand</a> and funded by prestegious <a href="https://phd.dic.gov.in/" rel="external nofollow noopener" target="_blank">Visvesvarya PhD fellowship</a>. I am the recipient of <a href="https://lokender.github.io/photos/#gold" target="_blank" rel="external nofollow noopener">Chancellor’s Gold Medal</a> for academic excellence in B.Tech (Computer Science and Engineering) 2008-2012.</p>
+
+    </section>
+
+    <section id="research-interests">
+        <h3>Research Interests</h3>
+        <ul>
+            <li><strong>Computer Vision:</strong> Scene & Image Understanding, 3D Reconstruction, Object Detection & Tracking, Segmentation, SLAM/VO</li>
+            <li><strong>Computer Graphics:</strong> Geometry Processing, Differentiable Rendering, Physics-Aware AR/VR/XR</li>
+            <li><strong>Generative AI:</strong> 2D / 3D / 4D Content Generation, Neural Physics-Based Simulators, Intuitive Physics</li>
+            <li><strong>Deep Learning:</strong> Machine Unlearning, Adversarial Attacks & Defense, and Hardware-Aware Modeling, AI on Edge</li>
+            <li><strong>Robust Estimation:</strong> Probabilistic and Statistical Modeling</li>
+            <li><strong>Application Areas:</strong> Defense, Industry 4.0/5.0, Entertainment & Rehabilitation, E-Commerce & Gaming</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h3>Industry Research Experience</h3>
+        <ul class="no-bullets">
+            <li>
+                <span class="job-title">Head of Computer Vision / AI</span> <span class="date-right">Nov 2025 - Present</span>
+                <span class="institution">BotLab Dynamics / Vayudh</span>
+                Supervising R&D for robust drone vision and intelligence.
+            </li>
+            <hr class="divider">
+            <li>
+                <span class="job-title">Senior Research Scientist / Principal Investigator</span> <span class="date-right">Jun 2021 - Nov 2025</span><br>
+                <span class="job-title">Consulting Research Scientist</span> <span class="date-right">Aug 2020 - Jun 2021</span>
+                <span class="institution">Tata Consultancy Services - Research, R&I Park IIT Delhi</span>
+                <ul>
+                    <li>Setup a new Visual Computing and Embodied AI research area, led several R&D projects at the intersection of Computer Vision, Graphics, AR/XR and Deep Learning. Tech transfer to business units.</li>
+                    <li><i>Research Areas</i>: 3D GenAI+XR, Spatial Intelligence, 3D Virtual Humans, 3D Scene & Human Understanding, Spatial Mapping, Simulation, Synthesis & Interactions.</li>
+                    <li><i>Notable Awards</i>: <b>Best Paper Runner Up @ 3D4S, CVPR 2026</b> | <b>Best Oral Paper Award @ ICVGIP'25</b> | Young Scientist Award | Innovation Pride Award | Top Seeds & Special Initiative Award.</li>
+                    <li><i>Media Highlights</i>: <a href="https://techxplore.com/news/2021-10-deepdraper-technique-people.html"> TechXplore</a> | <a href="https://www.gadgets360.com/science/news/deepdraper-virtual-clothes-try-on-3d-avatar-tool-prediction-technology-tcs-research-india-2590950"> NDTV Gadgets360</a> | <a href="https://www.businessapac.com/india-deepdraper-creates-a-3d-avatar/"> Business APAC</a></li>
+                </ul>
+
+
+            </li>
+            <hr class="divider">
+            <li>
+                <span class="job-title">Summer Researcher</span> <span class="date-right">May 2019 - Aug 2019</span>
+                <span class="institution">NEC Laboratories America, Inc. San Jose, USA</span>
+                Proposed world's first self-improving geometric-CNN SLAM/VO system [ <a href="https://lokender.github.io/projects/pseudo-rgbd-slam/">Project Page</a> | <a href="https://patents.google.com/patent/US11468585B2/en">US Patent</a> ]
+            </li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h3>Education</h3>
+        <ul class="no-bullets">
+            <li>
+                <span class="degree-title">Ph.D. in CSE (Computer Vision & Deep Learning)</span> <span class="date-right">Jul 2014 - Mar 2021 (Defended)</span>
+                <span class="institution">IIIT-Delhi, India</span>
+                <i>Thesis</i>: Robust Scene Understanding  | <i>Adviser</i>: <a href="https://www.iiitd.edu.in/~anands/index.html"> Dr. Saket Anand</a><br>
+                <i>Visvesvarya PhD Fellow</i> | <i>Doctoral Dissertation Award</i> | <i>US Patent Granted</i>
+            </li>
+            <hr class="divider">
+            <li>
+                <span class="degree-title">M.Tech in CSE</span> <span class="date-right">Jul 2012 - Jul 2014</span>
+                <span class="institution">CDAC, India</span>
+                <i>Thesis</i>: Robust Camera Captured Image Mosaicking for Document Digitization and OCR Processing 
+            </li>
+            <hr class="divider">
+            <li>
+                <span class="degree-title">B.Tech in CSE</span> <span class="date-right">Jul 2008 - Jul 2012</span>
+                <span class="institution">Faculty of Engineering & Technology, VBSPU, India</span>
+                <i>University Gold Medal (Rank-1)</i> | <i>University Topper</i> 
+                            </li>
+        </ul>
+    </section>
+
+    <section id="awards">
+        <h3>Awards & Fellowships</h3>
+        <ul>
+            <li><span class="date-right">2026</span> Best Oral Paper Runner-up Award at 3D4S Workshop, CVPR 2026, Denver USA.</li>
+            <li><span class="date-right">2025</span> Best Oral Paper Award at ICVGIP 2025, IIT Mandi.</li>
+            <li><span class="date-right">2023</span> Young Scientist Award, Awarded by TCS Research.</li>
+            <li><span class="date-right">2021</span> Doctoral Dissertation Award by IIIT-Delhi.</li>
+            <li><span class="date-right">2018</span> IEEE WACV'2018 PhD Forum Award.</li>
+            <li><span class="date-right">2017</span> Best Poster Award (2nd), Research Showcase 2017, held at IIIT-Delhi.</li>
+            <li><span class="date-right">2016</span> Best Doctoral Symposium Award (3rd), ICVGIP'2016, held at IIT-Guwahati.</li>
+            <li><span class="date-right">2016</span> IEEE Signal Processing Society Travel Award.</li>
+            <li><span class="date-right">2015</span> Selected (13/250) for Prototype Stage of Mahindra Rise Driverless Car Challenge.</li>
+            <li><span class="date-right">Jul 2014-Jul 2019</span> Visvesvarya Ph.D. Fellowship.</li>
+            <li><span class="date-right">Jul 2012-Jun 2014</span> Graduate Fellowship, GATE.</li>
+            <li><span class="date-right">Feb 2013</span> University Gold Medal (Rank-1) for Academic Excellence (B.Tech).</li>
+            <li><span class="date-right">Dec 2010</span> MHRD & DST Award for 3rd Science Conclave at IIIT-Allahabad.</li>
+        </ul>
+    </section>
+
+        <section id="teaching">
+        <h3>Teaching Experience</h3>
+        <h4>As Full Instructor</h4>
+        <ul>
+            <li>[<a href="https://lokender.github.io/teaching/COV877.html"> Course COV877</a> ] Special Module on Visual Computing at IIT-Delhi (2025).</li>
+            <li>[<a href="https://3dvss.github.io/#day-4"> Tutorial</a> ] Deep Learning for Autonomous Driving at 3D Vision Summer School, BITS-Pilani (2026).</li>
+            <li>[<a href="https://ece.iisc.ac.in/~spcom/2026/tutorials.html"> Tutorial</a> ] Revisiting 3D Vision in the Deep Learning Era at SPCOM'26, IISc (2026).</li>
+            <li>[<a href="https://lokender.github.io/tutorials/ICVGIP2025-Tutorial-VisualSLAM.html"> Tutorial</a> ] Visual SLAM for Autonomous Driving and Flying at ICVGIP '2025, IIT-Mandi (2025).</li>
+            <li>[<a href="https://cvit.iiit.ac.in/summerschool2025/speakers.php"> Tutorial</a> ] Score-Based Generative Modeling at Summer School on AI, IIIT-Hyderabad (2025).</li>
+            <li>[<a href="https://3dvss.github.io/"> Tutorial</a> ] Text-to-3D Generation at 3D Vision Summer School, IIIT-Bangalore (2024).</li>
+            <li>[<a href="https://icvgip.in/2024/tutorials"> Tutorial</a> ] 3D Garment Modeling and Animation at ICVGIP '2024, IIIT-Bangalore (2024).</li>
+            <li>[ <b>Invited Lectures</b> ] Learning-Based SLAM at IIT-Delhi hosted by Prof. Chetan Arora (2022).</li>
+        </ul>
+        <h4>As Head Teaching Assistant</h4>
+        <ul>
+            <li>Machine Learning (UG,PG), IIIT-Delhi, with Prof. Saket Anand and Prof. Anubha Gupta (Monsoon 2017, 2019).</li>
+            <li>Computer Vision (UG,PG), IIIT-Delhi, with Prof. Saket Anand (Winter 2016, 2017, 2018).</li>
+            <li>Computer Graphics (UG,PG), IIIT-Delhi, with Prof. Ojaswa Sharma (Monsoon 2014 and 2015).</li>
+            <li>Data Structure & Algorithms (UG, PG), IIIT-Delhi (Summer Term 2016).</li>
+            <li>Technical Communication (UG), IIIT-Delhi, with Prof. Pankaj Jalote (Winter 2015).</li>
+        </ul>
+    </section>
+
+    <section id="publications">
+        <h3>Publications</h3>
+
+        <h4>Journals</h4>
+        
+        <!-- <div class="pub-card highlighted" id="pub-j3"> -->
+        <!-- <div class="pub-card" id="pub-j3">
+            <div class="pub-year-bg">2026</div>
+            <div class="pub-image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[3] GLORA: Lifelong LLM Unlearning via Grassmannian Subspace Tracking</div>
+                <div class="pub-authors">Lokender Tiwari</div>
+                <div class="pub-venue">In Transaction on Machine Learning Research (TMLR) <span class="tag">Under Submission</span></div>
+                <div class="pub-buttons">
+                    <a href="#" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="pub-card" id="pub-j2">
+            <div class="pub-year-bg">2026</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/ultra.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[2] UltraNormal: Scaling Pretrained Diffusion-based Surface Normal Estimators to Ultra-High-Resolution</div>
+                <div class="pub-authors">Satyam Bhardwaj, Lokender Tiwari, Shivam Ashok Shukla, Mritunjoy Halder, Aalok Gangopadhyay, Brojeshwar Bhowmick</div>
+                <div class="pub-venue">To appear in Computer Graphics Forum, 2026</div>
+                <div class="pub-buttons">
+                    <a href="#" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-j1">
+            <div class="pub-year-bg">2022</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/slam_graph.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[1] A Review on Monocular Tracking and Mapping: From Model-Based to Data-Driven Methods</div>
+                <div class="pub-authors">Nivesh Gadipudi, Irraivan Elamvazuthi, Lila Iznita Izhar, Lokender Tiwari, Ramya Hebbalaguppe, Cheng-Kai Lu, Arockia Selvakumar Arockia Doss</div>
+                <div class="pub-venue">In The Visual Computer, International Journal of Computer Graphics, 2022</div>
+                <div class="pub-buttons">
+                     <a href="https://link.springer.com/article/10.1007/s00371-022-02702-z" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <h4>Conferences/Workshops/Preprints</h4>
+
+        <!-- <div class="pub-card" id="pub-c17">
+            <div class="pub-year-bg">2027</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/toflight.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[17] ToFLIGHT Ultra-Lightweight ToF Guided Metric Depth Estimation</div>
+                <div class="pub-authors">Lokender Tiwari</div>
+                <div class="pub-venue">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) <span class="tag">Under Submission</span></div>
+                <div class="pub-buttons">
+                    <a href="#" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="pub-card" id="pub-c16">
+            <div class="pub-year-bg">2026</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/faqem.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[16] Fast and Robust Mesh Simplification for Generated and Real-World 3D Assets</div>
+                <div class="pub-authors">Kunal Bhosikar, Preet Savalia, Lokender Tiwari, Brojeshwar Bhowmick</div>
+                <div class="pub-venue">CVPR, 2026, 3D4S Workshop <span class="tag">Oral</span> <span class="tag">Best Oral Paper Runner Up</span></div>
+                <div class="pub-buttons">
+                    <a href="https://arxiv.org/abs/2605.14029" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c15">
+            <div class="pub-year-bg">2026</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/sketch3r.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[15] Sketch3R: Rapid and Realistic 3D VR Sketch Creation to Shape Retrieval</div>
+                <div class="pub-authors">Lokender Tiwari et.al.</div>
+                <div class="pub-venue">In IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2026</div>
+                <div class="pub-buttons">
+                    <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Halder_Sketch3R_Rapid_and_Realistic_3D_VR_Sketch_Creation_to_Shape_WACV_2026_paper.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c14">
+            <div class="pub-year-bg">2025</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/icvgip.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[14] GeMR: Multi-modal Interactive 3D Scene Composition in XR</div>
+                <div class="pub-authors">Lokender Tiwari et.al.</div>
+                <div class="pub-venue">In Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP), 2025 <span class="tag">Oral</span> <span class="tag">Best Oral Paper <a href="https://icvgip.in/2025/#best_paper_awards" target="_blank"> Link </a></span></div>
+                <div class="pub-buttons">
+                    <a href="#" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c13">
+            <div class="pub-year-bg">2025</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/vrst2025.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[13] SketchTo3DGen: GenAI Powered Articulation Ready 3D Asset Ideation using 3D Sketches and Audio Descriptions</div>
+                <div class="pub-authors">Lokender Tiwari et.al.</div>
+                <div class="pub-venue">In ACM Virtual Reality Software and Technology (VRST), 2025</div>
+                <div class="pub-buttons">
+                 <a href="https://dl.acm.org/doi/10.1145/3756884.3770540" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c12">
+            <div class="pub-year-bg">2025</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/ingenco.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[12] InGenCo: Integrated In-Place 3D Scenario Generation and Collaboration</div>
+                <div class="pub-authors">Lokender Tiwari et.al.</div>
+                <div class="pub-venue">In IEEE International Symposium on Mixed and Augmented Reality (ISMAR), 2025</div>
+                <div class="pub-buttons">
+                    <a href="https://ieeexplore.ieee.org/document/11236362" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c11">
+            <div class="pub-year-bg">2025</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/fav3r.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[11] Fast and Accurate 3D VR Sketch to 3D Shape Retrieval</div>
+                <div class="pub-authors">Lokender Tiwari et.al.</div>
+                <div class="pub-venue">In IEEE International Symposium on Mixed and Augmented Reality (ISMAR), 2025</div>
+                <div class="pub-buttons">
+                 <a href="https://ieeexplore.ieee.org/document/11236174" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c10">
+            <div class="pub-year-bg">2025</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/disflowem.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[10] DisFlowEm: One-Shot Emotional Talking Head Generation using Disentangled Pose and Expression Flow-Guidance</div>
+                <div class="pub-authors">Sanjana Sinha, Brojeshwar Bhowmick, Lokender Tiwari, Sushovan Chanda</div>
+                <div class="pub-venue">In IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2025 <span class="tag">Oral</span></div>
+                <div class="pub-buttons">
+                 <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Sinha_DisFlowEm__One-Shot_Emotional_Talking_Head_Generation_using_Disentangled_Pose_WACV_2025_paper.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c9">
+            <div class="pub-year-bg">2023</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/enhanced_pose.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[9] Enhanced Spatio-Temporal Context for Temporally Consistent Robust 3D Human Motion Recovery from Monocular Videos</div>
+                <div class="pub-authors">Sushovan Chanda, Amogh Tiwari, Lokender Tiwari, Brojeshwar Bhowmick, Avinash Sharma, Hrishav Barua</div>
+                <div class="pub-venue">In arXiv, 2023 <span class="tag">Patent Granted</span></div>
+                <div class="pub-buttons">
+                    <a href="https://arxiv.org/pdf/2311.11662.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c8">
+            <div class="pub-year-bg">2023</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/gensim_thumb.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[8] GenSim: Unsupervised Generic Garment Simulator</div>
+                <div class="pub-authors">Lokender Tiwari, Brojeshwar Bhowmick, Sanjana Sinha</div>
+                <div class="pub-venue">In CVPR, 2023, Deep Learning for Geometric Computing Workshop, <span class="tag">Oral</span> <span class="tag">Patent Published</span></div>
+                <div class="pub-buttons">
+                <a href="https://openaccess.thecvf.com/content/CVPR2023W/DLGC/papers/Tiwari_GenSim_Unsupervised_Generic_Garment_Simulator_CVPRW_2023_paper.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c7">
+            <div class="pub-year-bg">2023</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/garsim_wacv_main.gif" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[7] GarSim: Particle Based Neural Garment Simulator</div>
+                <div class="pub-authors">Lokender Tiwari, Brojeshwar Bhowmick</div>
+                <div class="pub-venue">In IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2023 <span class="tag">Oral</span> <span class="tag">Patent Published</span></div>
+                <div class="pub-buttons">
+                   <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Tiwari_GarSim_Particle_Based_Neural_Garment_Simulator_WACV_2023_paper.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c6">
+            <div class="pub-year-bg">2022</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/REGroup.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[6] REGroup: Rank-aggregating Ensemble of Generative Classifiers for Robust Predictions</div>
+                <div class="pub-authors">Lokender Tiwari, Anish Madan, Saket Anand and Subhasis Banerjee</div>
+                <div class="pub-venue">In IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2022</div>
+                <div class="pub-buttons">
+                 <a href="https://openaccess.thecvf.com/content/WACV2022/papers/Tiwari_REGroup_Rank-Aggregating_Ensemble_of_Generative_Classifiers_for_Robust_Predictions_WACV_2022_paper.pdf" class="pub-btn">PDF</a> <a href="https://lokender.github.io/projects/REGroup/" class="pub-btn">WEBSITE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c5">
+            <div class="pub-year-bg">2021</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/deepdraper.gif" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[5] DeepDraper: Fast and Accurate 3D Garment Draping over a 3D Human Body</div>
+                <div class="pub-authors">Lokender Tiwari, Brojeshwar Bhowmick</div>
+                <div class="pub-venue">In ICCV, 2021, Differentiable 3D Vision and Graphics Workshop, <span class="tag">Oral</span> <span class="tag">Patent Granted</span></div>
+                <div class="pub-buttons">
+                    <a href="https://openaccess.thecvf.com/content/ICCV2021W/Diff3D/papers/Tiwari_DeepDraper_Fast_and_Accurate_3D_Garment_Draping_Over_a_3D_ICCVW_2021_paper.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c4-1">
+            <div class="pub-year-bg">2020</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/prgbd_teaser.gif" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[4] Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction</div>
+                <div class="pub-authors">Lokender Tiwari, Pan Ji, Quoc-Huy Tran, Bingbing Zhuang, Saket Anand, Manmohan Chandraker</div>
+                <div class="pub-venue">In European Conference on Computer Vision (ECCV), 2020 <span class="tag">Oral</span> <span class="tag">Patent Granted</span></div>
+                <div class="pub-buttons">
+                <a href="http://arxiv.org/abs/2004.10681" class="pub-btn">ARXIV</a> <a href="#" class="pub-btn">BIB</a> <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123560426.pdf" class="pub-btn">PDF</a> <a href="https://lokender.github.io/projects/pseudo-rgbd-slam/" class="pub-btn">WEBSITE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c4-2">
+            <div class="pub-year-bg">2018</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/dgsac_wacv.jpg" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[4] DGSAC: Density Guided SAmpling and Consensus</div>
+                <div class="pub-authors">Lokender Tiwari, Saket Anand</div>
+                <div class="pub-venue">In IEEE Winter Conference on Applications of Computer Vision (WACV), 2018 <span class="tag">Oral</span></div>
+                <div class="pub-buttons">
+                    <a href="https://github.com/lokender/dgsac" class="pub-btn">CODE</a> <a href="https://lokender.github.io/assets/pdf/TiwariAnand_WACV2018_DGSAC.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c3">
+            <div class="pub-year-bg">2016</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/dpa_accv.png" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[3] Robust Multi-Model Fitting using Density and Preference Analysis</div>
+                <div class="pub-authors">Lokender Tiwari, Saket Anand, Sushil Mittal</div>
+                <div class="pub-venue">In 13th Asian Conference on Computer Vision (ACCV), Taipei, Taiwan, 2016</div>
+                <div class="pub-buttons">
+                    <a href="https://github.com/lokender/DPA" class="pub-btn">CODE</a> <a href="https://lokender.github.io/assets/pdf/dpa_accv2016.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c2">
+            <div class="pub-year-bg">2016</div>
+            <div class="pub-image"><img src="https://lokender.github.io/assets/img/publication_preview/fhf_icip.jpg" alt="Publication Image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[2] Fast Hypothesis Filtering for Multi-Structure Geometric Model Fitting</div>
+                <div class="pub-authors">Lokender Tiwari, Saket Anand</div>
+                <div class="pub-venue">In IEEE International Conference on Image Processing(ICIP), Phoenix, Arizona, USA, 2016</div>
+                <div class="pub-buttons">
+                 <a href="https://lokender.github.io/assets/pdf/fhf_icip2016.pdf" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-c1">
+            <div class="pub-year-bg">2014</div>
+            <div class="pub-image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[1] Robust Camera Captured Image Mosaicking for Document Digitization and OCR Processing</div>
+                <div class="pub-authors">Lokender Tiwari, Bhupendra Kumar, Tushar Patnaik</div>
+                <div class="pub-venue">In Proceeding of IEEE International Conference on Information Technology (ICIT), Bhubaneswar, India, Dec 2014</div>
+                <div class="pub-buttons">
+                    <a href="https://ieeexplore.ieee.org/document/7033304/" class="pub-btn">PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <h4>Symposiums</h4>
+
+        <div class="pub-card" id="pub-s2">
+            <div class="pub-year-bg">2016</div>
+            <div class="pub-image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[2] Robust Estimation in Geometric Computer Vision</div>
+                <div class="pub-authors">L. Tiwari</div>
+                <div class="pub-venue">In (Doctoral Symposium), ICVGIP 2016, IIT-Guwahati, India., 2016</div>
+                <div class="pub-buttons">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="pub-card" id="pub-s1">
+            <div class="pub-year-bg">2016</div>
+            <div class="pub-image"></div>
+            <div class="pub-content">
+                <div class="pub-title">[1] Geometric Model Fitting Game</div>
+                <div class="pub-authors">L. Tiwari, S. Anand</div>
+                <div class="pub-venue">In Symposium on Computation and Optimization in the Sciences and Engineering, IIT-Kanpur, 2016</div>
+                <div class="pub-buttons">
+                   
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+
+
+    <section id="patents">
+        <h3>Patents Granted / Published</h3>
+        <p><strong>Summary:</strong> 6 Granted and 7 Published</p>
+        <ul class="no-bullets">
+            <li><span class="patent-id">[13] [US Patent Granted <a href="https://patents.google.com/patent/US12548175B2">US12548175B2</a>]</span> Tiwari, Lokender, et al. "Method and system for estimating temporally consistent 3D human shape and motion from monocular video." Feb. 2026.</li>
+            <li><span class="patent-id">[12] [European Patent Granted <a href="https://patents.google.com/patent/EP4446990B1">EP4446990B1</a>]</span> Tiwari, Lokender, et al. "Method and system for estimating temporally consistent 3D human shape and motion from monocular video.", Feb. 2026.</li>
+            <li><span class="patent-id">[11] [Indian Patent Granted <b>565533</b>]</span> Tiwari, Lokender, et al. "Method and system for draping a 3D garment on a 3D human body." April, 2025.</li>
+            <li><span class="patent-id">[10] [US Patent Granted <a href="https://patents.google.com/patent/US11778162B2">US11778162B2</a>]</span> Tiwari, Lokender, et al. "Method and system for draping a 3D garment on a 3D human body.", Oct. 2023.</li>
+            <li><span class="patent-id">[9] [European Patent Granted <a href="https://patents.google.com/patent/EP4064209A1/">EP4064209A1</a>]</span> Tiwari, Lokender, et al. "Method and system for draping a 3D garment on a 3D human body." Jan, 2025.</li>
+            <li><span class="patent-id">[8] [US Patent Granted <a href="https://patents.google.com/patent/US11468585B2">US11468585B2</a>]</span> Tiwari, Lokender, et al. "Pseudo RGB-D for self-improving monocular slam and depth prediction.", Oct. 2022.</li>
+            <li><span class="patent-id">[7] [European Patent Published <a href="https://patents.google.com/patent/EP4471724A1">EP4471724A1</a>]</span> Tiwari, Lokender, Brojeshwar Bhowmick, and Sanjana SINHA. "Method and system for generic garment simulation.", Dec, 2024.</li>
+            <li><span class="patent-id">[6] [US Patent Published <a href="https://patents.google.com/patent/US20240403508A1">US20240403508A1</a>]</span> Tiwari, Lokender, Brojeshwar Bhowmick, and Sanjana SINHA. "Method and system for generic garment simulation.", Dec, 2024.</li>
+            <li><span class="patent-id">[5] [US Patent Published <a href="https://patents.google.com/patent/US20240078356A1">US20240078356A1</a>]</span> Tiwari, Lokender, and Brojeshwar Bhowmick. "Systems and methods for simulating garments on target body poses." June, 2024.</li>
+            <li><span class="patent-id">[4] [European Patent Published <a href="https://patents.google.com/patent/EP4307171A1">EP4307171A1</a>]</span> Tiwari, Lokender, and Brojeshwar Bhowmick. "Systems and methods for simulating garments on target body poses.", Jan, 2024.</li>
+            <li><span class="patent-id">[3] [Indian Patent Published <a href="">202321038154</a>]</span> Tiwari, Lokender, Brojeshwar Bhowmick, and Sanjana SINHA. "Method and system for generic garment simulation.", Jun, 2023.</li>
+            <li><span class="patent-id">[2] [Indian Patent Published <a href="">202321026563</a>]</span> Tiwari, Lokender, et al. "Method and system for estimating temporally consistent 3D human shape and motion from monocular video.", April. 2023.</li>
+            <li><span class="patent-id">[1] [Indian Patent Published <a href="">202221039816</a>]</span> Tiwari, Lokender, and Brojeshwar Bhowmick. "Systems and methods for simulating garments on target body poses." Jan, 20２４.</li>
+        </ul>
+    </section>
+
+    <section id="tech-transferred">
+        <h3>Technologies Developed / Transferred</h3>
+        <ul>
+            <li>3D Garments Virtual Try-on for TCS Business Unit</li>
+            <li>3D Human Shape and Motion Recovery for TCS Business Unit</li>
+            <li>2D Paintings to 3D Immersive, Explorable Environments for TCS Business Unit</li>
+            <li>Gen AI-Powered Interactive 3D Content Generation & Composition in XR for TCS Business Unit</li>
+            <!-- <li>Real-Time 3D Drone Video Stabilization, BotLab Dynamics Product</li>
+            <li>Real-Time AI-Powered ToF-Dense Depth for Obstacle Avoidance, BotLab Dynamics Product</li> -->
+        </ul>
+    </section>
+
+    <section id="mentorship">
+        <h3>Thesis Examiner & Mentorship</h3>
+        <ul>
+            <li>[<b>Examiner</b>] Kunal Bhosikar, MS(CSE) Research, CVIT, IIIT-Hyderabad, Adviser: Prof Charu 2026.</li>
+            <li>[<b>Examiner</b>] Amogh Tiwari, MS(CSE) Research, CVIT, IIIT-Hyderabad, Adviser: Prof Avinash.</li>
+            <li>[<b>External Mentor</b>] Suraj Patni, MS(AI) IIT-Delhi, Adviser: Prof. Chetan Arora.</li>
+            <li>[<b>External Mentor</b>] Karan Tanwar, B.Tech+MTech CSE IIT-Delhi, Adviser: Prof. Chetan Arora.</li>
+        </ul>
+    </section>
+
+    <section id="interns">
+        <h3>Interns Supervision</h3>
+        <ul>
+            <li>Sourav Verma, Ph.D. CS, NIT-Jalandhar <span class="date-right">(2026 Industry Intern)</span></li>
+            <li>Jashn Khameni, B.Tech CS, IIIT-Delhi <span class="date-right">(2026 Industry Intern)</span></li>
+            <li>Ayaan Chaudhary, B.Tech CSAI, IIT-Jodhpur <span class="date-right">(2026 Industry Intern)</span></li>
+            <li>Preet Savallia, B.Tech CSAI, IIT-Jodhpur, now Masters at CMU <span class="date-right">(2025 Industry Intern)</span></li>
+            <li>Kunal Bhosikar, B.Tech + MS Research, IIIT-Hyderabad, now PhD @ MPI <span class="date-right">(2025 Industry Intern)</span></li>
+            <li>Sreehari Rajan, B.Tech + MS Research, IIIT-Hyderabad <span class="date-right">(2025 Industry Intern)</span></li>
+            <li>Harsh Singh, B.Tech, IIIT-Delhi - now Researcher at TCS Research <span class="date-right">(2024 Industry Intern)</span></li>
+            <li>Richik Sarkar, B.Tech, IIT-Kharagpur - now Researcher at TCS Research <span class="date-right">(2023 Industry Intern)</span></li>
+            <li>Anish Madan, B.Tech CSAM, IIIT-Delhi - Now masters at CMU <span class="date-right">(Thesis Mentorship)</span></li>
+            <li>Amogh Tiwari, B.Tech + MS, IIIT-Hyderabad - Ph.D @ INRIA, Grenoble <span class="date-right">(2022 Industry Intern)</span></li>
+            <li>Karan Tanwar, B.Tech + M.Tech, IIT-Delhi - Now SDE at AMAZON <span class="date-right">(2022 Thesis Mentorship)</span></li>
+            <li>Suraj Patni, MS Research (AI), IIT-Delhi - Now SDE at Qualcomm <span class="date-right">(2024 Thesis Mentorship)</span></li>
+            <li>Munender Varshney, Ph.D, IIT-Kanpur - Now Research Scientist at Hitachi <span class="date-right">(2023 Industry Intern)</span></li>
+            <li>B.V Raghav, Ph.D, IIT-Kanpur - Now Assistant Professor at Thapar University <span class="date-right">(2022 Industry Intern)</span></li>
+            <li>Sushovan Chanda - Now PhD student @ University of Göttingen <span class="date-right">(TCS Researcher Mentoring)</span></li>
+        </ul>
+    </section>
+
+    <section id="workshops">
+        <h3>Workshop, Summer School, Special Track & Tutorials Organized</h3>
+        <ul>
+            <li>[<a href="https://3dvss.github.io/#team">Co-Organizer</a>] 3D Vision Summer School, 2024, 2025, 2026.</li>
+            <li>[<a href="https://lokender.github.io/tutorials/ICVGIP2025-Tutorial-VisualSLAM.html">Organizer</a>] Tutorial on Visual SLAM at ICVGIP, 2025, IIT Mandi.</li>
+            <li>[<a href="https://archive.comsnets.org/archive/2024/cvad_workshop.html">Co-Chair</a>] Workshop on Connected Vehicles & Autonomous Driving at COMSNETS, 2024.</li>
+            <li>[<a href="https://icvgip.in/2024/tutorials">Co-Organizer</a>] Tutorial on 3D Garment Modeling at ICVGIP, 2024, with Prof. Avinash, IIT Jodhpur.</li>
+            <li>[<a href="https://www.isvc.net/wp-content/uploads/2025/08/ST3Shukla.pdf">Co-Organizer</a>] Special Track on Data-Efficient Visual Computing for Environmental and Social Good at 20th International Symposium on Visual Computing, USA.</li>
+        </ul>
+    </section>
+
+    <section id="services">
+        <h3>Professional Services</h3>
+        <ul>
+            <li>Regular Reviewer / Program Committee Members of Reputed Conference in CV, CG, DL, AR/XR Areas: CVPR, ICCV, ECCV, WACV, BMVC, 3DV, ICML, AAAI, ICLR, NeurIPS, ACMMM, ISMAR etc.</li>
+            <li>Regular Reviewer of Reputed Journals in CV, CG, DL, AR/XR Areas: IJCV, CVIU, TCSVT, Computer Graphics Forum, Pattern Recognition.</li>
+            <li>Served as <a href="https://lokender.github.io/assets/pdf/sih.pdf">evaluator</a> for Smart India Hackathon organized by Govt. of India.</li>
+        </ul>
+    </section>
+
+    <section id="keynotes">
+        <h3>Keynote / Invited Talks</h3>
+        <ul>
+            <li>Invited talk on Unboxing Deep Neural Networks using Information Theory at VIT-Vellore.</li>
+            <li>Invited Guest Judge for the Project Showcase Event at Bennett University.</li>
+            <li>Invited talk on Robust Scene Understanding at <a href="https://lu.ma/kdmdelhincr43">43rd Kaggle Days Meetup Delhi-NCR</a>.</li>
+            <li>Invited talk on Metaverse: Current and The Future, a Visual Computing Perspective at Sushant University.</li>
+            <li>Keynote talk on Scene Understanding at BITCON 2021, BITS Durg.</li>
+        </ul>
+    </section>
+
+    <!-- <section id="photos">
+        <h3>Photos</h3>
+        <p>[You can add your image galleries or conference photos here]</p>
+    </section> -->
+
+</div>
+
+</body>
+</html>
