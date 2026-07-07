@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGroup - Rank-aggregating Ensemble | Lokender Tiwari, PhD</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #2980b9;
+            --text-color: #333;
+            --bg-color: #f4f6f7;
+            --container-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: var(--container-bg);
+            padding: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+
+        .header-section {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 2.2rem; margin-bottom: 5px; }
+        h2 { font-size: 1.1rem; color: var(--secondary-color); font-weight: 500; margin-top: 0; }
+        h3 { 
+            color: var(--primary-color); 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 8px; 
+            margin-bottom: 20px; 
+            font-size: 1.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-top: 40px; 
+        }
+        
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+        }
+
+        .authors, .affiliations { text-align: center; font-size: 1.05rem; margin-bottom: 10px; }
+        .authors a, .affiliations a { color: var(--primary-color); font-weight: 500; }
+
+        .button-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0 30px 0;
+        }
+
+        .btn-link {
+            padding: 6px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background-color: #f8f9fa;
+            color: var(--secondary-color);
+            border: 1px solid #dcdcdc;
+            transition: all 0.2s ease;
+        }
+
+        .btn-link:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid var(--accent-color);
+            margin: 1.5em 0;
+            padding: 1em 20px;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 3px solid var(--accent-color);
+            color: #444;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 1em 1.5em;
+            overflow: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+
+    <div class="header-section">
+        <h1>REGroup - Rank-aggregating Ensemble of Generative Classifiers for Robust Predictions</h1>
+        <h2>In IEEE Winter Conference on Applications of Computer Vision (<b>WACV</b>), 2022</h2>
+    </div>
+
+    <div class="authors">
+        <a href="https://lokender.github.io/" target="_blank">Lokender Tiwari</a><sup>1,2</sup>, 
+        <a href="https://scholar.google.com/citations?user=eZ4WZmIAAAAJ&hl=en" target="_blank">Anish Madan</a><sup>1</sup>, 
+        <a href="https://www.iiitd.edu.in/~anands/index.html" target="_blank">Saket Anand</a><sup>1</sup>, 
+        <a href="http://www.cse.iitd.ac.in/~suban//" target="_blank">Subhasis Banerjee</a><sup>3,4</sup>
+    </div>
+    
+    <div class="affiliations">
+        <sup>1</sup><a href="https://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>, 
+        <sup>2</sup><a href="https://www.tcs.com/tcs-research" target="_blank">TCS Research</a>, 
+        <sup>3</sup><a href="https://home.iitd.ac.in/" target="_blank">IIT-Delhi</a>, 
+        <sup>4</sup><a href="https://www.ashoka.edu.in/computerscience" target="_blank">Ashoka University</a>
+    </div>
+
+    <div class="button-bar">
+        <a href="https://openaccess.thecvf.com/content/WACV2022/papers/Tiwari_REGroup_Rank-Aggregating_Ensemble_of_Generative_Classifiers_for_Robust_Predictions_WACV_2022_paper.pdf" target="_blank" class="btn-link">PDF</a>
+        <a href="https://youtu.be/hwKjcc1IJqw" target="_blank" class="btn-link">Conference Talk</a>
+        <a href="https://lokender.github.io/assets/pdf/REGroup_talk_PPT.pdf" target="_blank" class="btn-link">Conference Talk Slides</a>
+        <a href="https://lokender.github.io/assets/pdf/REGroup_poster.pdf" target="_blank" class="btn-link">Poster</a>
+        <a href="https://github.com/lokender/REGroup" target="_blank" class="btn-link">Code</a>
+    </div>
+
+    <h3>Abstract</h3>
+    <blockquote>
+        Deep Neural Networks (DNNs) are often criticized for being susceptible to adversarial attacks. Most successful defense strategies adopt adversarial training or random input transformations that typically require retraining or fine-tuning the model to achieve reasonable performance. In this work, our investigations of intermediate representations of a pre-trained DNN lead to an interesting discovery pointing to intrinsic robustness to adversarial attacks. We find that we can learn a generative classifier by statistically characterizing the neural response of an intermediate layer to clean training samples. The predictions of multiple such intermediate-layer based classifiers, when aggregated, show unexpected robustness to adversarial attacks. Specifically, we devise an ensemble of these generative classifiers that rank-aggregates their predictions via a Borda count-based consensus. Our proposed approach uses a subset of the clean training data and a pre-trained model, and yet is agnostic to network architectures or the adversarial attack generation method. We show extensive experiments to establish that our defense strategy achieves state-of-the-art performance on the ImageNet validation set.
+    </blockquote>
+
+    <img src="https://lokender.github.io/assets/img/REGroup_teaser.png" alt="REGroup Overview" class="img-fluid">
+    <div class="caption"><b>Figure 1:</b> REGroup Overview.</div>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/hwKjcc1IJqw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <div class="caption"><b>WACV 2022 Conference Talk</b></div>
+
+    <h3>Sample Results</h3>
+
+    <div class="image-grid">
+        <img src="https://lokender.github.io/assets/img/regroup_eg_1.png" alt="Sample Result 1" class="img-fluid">
+        <img src="https://lokender.github.io/assets/img/regroup_eg_2.png" alt="Sample Result 2" class="img-fluid">
+    </div>
+
+    <img src="https://lokender.github.io/assets/img/regroup_eg_3.png" alt="Sample Result 3" class="img-fluid" style="max-width: 80%;">
+
+    <h3>Bibtex</h3>
+<pre>@inproceedings{tiwari2022regroup,
+  title={REGroup: Rank-aggregating Ensemble of Generative Classifiers for Robust Predictions},
+  author={Tiwari, Lokender and Madan, Anish and Anand, Saket and Banerjee, Subhashis},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={2595--2604},
+  year={2022}
+}</pre>
+
+</div>
+
+</body>
+</html>

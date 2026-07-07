@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo RGB-D | Lokender Tiwari, PhD</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #2980b9;
+            --text-color: #333;
+            --bg-color: #f4f6f7;
+            --container-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: var(--container-bg);
+            padding: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+
+        .header-section {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 2.2rem; margin-bottom: 5px; }
+        h2 { font-size: 1.1rem; color: var(--secondary-color); font-weight: 500; margin-top: 0; }
+        h3 { 
+            color: var(--primary-color); 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 8px; 
+            margin-bottom: 20px; 
+            font-size: 1.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-top: 40px; 
+        }
+        
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+        }
+
+        .authors, .affiliations { text-align: center; font-size: 1.05rem; margin-bottom: 10px; }
+        .authors a, .affiliations a { color: var(--primary-color); font-weight: 500; }
+
+        .button-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0 30px 0;
+        }
+
+        .btn-link {
+            padding: 6px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background-color: #f8f9fa;
+            color: var(--secondary-color);
+            border: 1px solid #dcdcdc;
+            transition: all 0.2s ease;
+        }
+
+        .btn-link:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid var(--accent-color);
+            margin: 1.5em 0;
+            padding: 1em 20px;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 3px solid var(--accent-color);
+            color: #444;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 1em 1.5em;
+            overflow: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+
+    <div class="header-section">
+        <h1>Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction</h1>
+        <h2>In European Conference on Computer Vision (<b>ECCV</b>), 2020</h2>
+    </div>
+
+    <div class="authors">
+        <a href="https://lokender.github.io/" target="_blank">Lokender Tiwari</a><sup>1</sup>, 
+        <a href="https://sites.google.com/site/peterji1990" target="_blank">Pan Ji</a><sup>2</sup>, 
+        <a href="https://cs.adelaide.edu.au/~huy/home.php" target="_blank">Quoc-Huy Tran</a><sup>2</sup>, 
+        <a href="https://bbzh.github.io/" target="_blank">Bingbing Zhuang</a><sup>2</sup>, 
+        <a href="https://www.iiitd.edu.in/~anands/index.html" target="_blank">Saket Anand</a><sup>1</sup>, 
+        <a href="https://cseweb.ucsd.edu/~mkchandraker/" target="_blank">Manmohan Chandraker</a><sup>2,3</sup>
+    </div>
+    
+    <div class="affiliations">
+        <sup>1</sup><a href="https://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>, 
+        <sup>2</sup><a href="http://www.nec-labs.com/research-departments/media-analytics/media-analytics-home" target="_blank">NEC Labs America, Inc.</a>, 
+        <sup>3</sup><a href="https://ucsd.edu/" target="_blank">UCSD</a>
+    </div>
+
+    <div class="button-bar">
+        <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123560426.pdf" target="_blank" class="btn-link">PDF</a>
+        <a href="https://arxiv.org/pdf/2004.10681" target="_blank" class="btn-link">arXiv</a>
+        <a href="https://www.youtube.com/watch?v=N9Di1uN0ut0" target="_blank" class="btn-link">Conference Talk and Demos</a>
+        <a href="https://lokender.github.io/assets/pdf/pRGBD_ECCV_Main_Talk.pdf" target="_blank" class="btn-link">Conference Talk Slides</a>
+        <a href="https://lokender.github.io/assets/pdf/pRGBD_ECCV_Demo_Talk.pdf" target="_blank" class="btn-link">Demo Talk Slides</a>
+    </div>
+
+    <h3>Abstract</h3>
+    <blockquote>
+        Classical monocular Simultaneous Localization And Mapping (SLAM) and the recently emerging convolutional neural networks (CNNs) for monocular depth prediction represent two largely disjoint approaches towards building a 3D map of the surrounding environment. In this paper, we demonstrate that the coupling of these two by leveraging the strengths of each mitigates the others shortcomings. Specifically, we propose a joint narrow and wide baseline based self-improving framework, where on the one hand the CNN-predicted depth is leveraged to perform pseudo RGB-D feature-based SLAM, leading to better accuracy and robustness than the monocular RGB SLAM baseline. On the other hand, the bundleadjusted 3D scene structures and camera poses from the more principled geometric SLAM are injected back into the depth network through novel wide baseline losses proposed for improving the depth prediction network, which then continues to contribute towards better pose and 3D structure estimation in the next iteration. We emphasize that our framework only requires unlabeled monocular videos in both training and inference stages, and yet is able to outperform state-of-the-art self-supervised monocular and stereo depth prediction networks (e.g., Monodepth2) and feature-based monocular SLAM system (i.e., ORB-SLAM). Extensive experiments on KITTI and TUM RGB-D datasets verify the superiority of our self-improving geometry-CNN framework.
+    </blockquote>
+
+    <img src="https://lokender.github.io/assets/img/self_improving_framework.png" alt="Self Improving Framework" class="img-fluid">
+    <div class="caption"><b>Figure 1:</b> A SELF-SUPERVISED, SELF-IMPROVING FRAMEWORK -- It alternates between pose refinement (blue arrows) and depth refinement (red arrows).</div>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/N9Di1uN0ut0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <div class="caption"><b>ECCV 2020 Conference Talk</b></div>
+
+    <h3>ECCV 2020 Demo Track : RGB vs Pseudo RGB-D SLAM</h3>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/gdY4yn0J4E0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <div class="caption"><b>Video 1:</b> KITTI Odometry Sequence 19</div>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/OOPJpHexrdE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <div class="caption"><b>Video 2:</b> KITTI Odometry Sequence 11</div>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/MffXsKjy9W0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <div class="caption"><b>Video 3:</b> TUM RGB-D Sequence freiburg3 Large Cabinet Validation.</div>
+
+    <h3>Results: Qualitative Depth Estimation</h3>
+    <img src="https://lokender.github.io/assets/img/qual_depth_far.png" alt="Depth Results Far" class="img-fluid">
+    <div class="caption"><b>Figure 2:</b> Qualitative depth evaluation results on KITTI Odometry test set. Improvement in depth prediction of farther scene points.</div>
+
+    <img src="https://lokender.github.io/assets/img/qual_depth.png" alt="Depth Results" class="img-fluid">
+    <div class="caption"><b>Figure 3:</b> Qualitative depth evaluation results on KITTI Raw Eigen split test set. MonoDepth2-M is the MonoDepth2 model trained using monocular images.</div>
+
+    <h3>Results: Qualitative Pose Estimation Results</h3>
+    <img src="https://lokender.github.io/assets/img/qual_pose_kitti.png" alt="Pose Estimation Results" class="img-fluid">
+    <div class="caption"><b>Figure 4:</b> Qualitative pose evaluation results on KITTI Odometry sequences.</div>
+
+    <h3>Bibtex</h3>
+<pre>@inproceedings{tiwari2020pseudo,
+    author={Tiwari, Lokender and Ji, Pan and Tran, Quoc-Huy and Zhuang, Bingbing and Anand, Saket and Chandraker, Manmohan},
+    title     = {Pseudo RGB-D for Self-Improving Monocular SLAM and Depth Prediction}, 
+    booktitle = {European Conference on Computer Vision},
+    year      = {2020}
+}</pre>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos | Lokender Tiwari, PhD</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #2980b9;
+            --text-color: #333;
+            --bg-color: #f4f6f7;
+            --container-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: var(--container-bg);
+            padding: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+
+        .header-section {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 2.2rem; margin-bottom: 5px; }
+        h2 { font-size: 1.1rem; color: var(--secondary-color); font-weight: 500; margin-top: 0; }
+        h3 { 
+            color: var(--primary-color); 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 8px; 
+            margin-bottom: 20px; 
+            font-size: 1.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-top: 40px; 
+        }
+        
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .image-grid .img-fluid {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+
+    <div class="header-section">
+        <h1>Photos</h1>
+        <h2>Photos from various events and ceremonies</h2>
+    </div>
+
+    <h3>Chancellor's Gold Medal for Academic Excellence in B.Tech</h3>
+    <img src="https://lokender.github.io/assets/img/gold.jpg" alt="Chancellor's Gold Medal" class="img-fluid" style="max-width: 80%;">
+    <div class="caption">
+        <b>From left:</b> Starting from me, Retd Chief Justice of Supreme Court of India, <a href="https://en.wikipedia.org/wiki/J._S._Verma" target="_blank"><b>Late Justice J.S Verma</b></a>, Governor of Uttar Pradesh, India <a href="https://en.wikipedia.org/wiki/Banwari_Lal_Joshi" target="_blank"><b>B.L Joshi</b></a>, Vice Chancellor of University, Prof. Sundar Lal
+    </div>
+
+    <h3>Best Poster Award (2nd) - Research Showcase, 2016</h3>
+    <div class="image-grid">
+        <img src="https://lokender.github.io/assets/img/rs_fhf.jpg" alt="Best Poster Award 1" class="img-fluid">
+        <img src="https://lokender.github.io/assets/img/rs_fhf3.jpg" alt="Best Poster Award 2" class="img-fluid">
+        <img src="https://lokender.github.io/assets/img/rs_fhf2.jpg" alt="Best Poster Award 3" class="img-fluid">
+    </div>
+
+</div>
+
+</body>
+</html>
