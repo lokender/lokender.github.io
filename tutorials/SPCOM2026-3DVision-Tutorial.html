@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisiting 3D Vision in the Deep Learning Era — SPCOM 2026 Tutorial</title>
+<style>
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #2980b9;
+    --text-color: #333;
+    --bg-color: #f4f6f7;
+    --container-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --soothing-highlight: #e8f4fa;
+    --highlight-border: #b3d4fc;
+    --code-bg: #2d333b;
+    --code-fg: #e6edf3;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0; padding: 0;
+}
+.banner-img {
+    width: 100%;
+    max-width: 1150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.container {
+    max-width: 1150px;
+    margin: 0 auto 40px auto;
+    background: var(--container-bg);
+    padding: 45px 55px 55px 55px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 0 0 10px 10px;
+}
+header.tutorial-header {
+    border-bottom: 0px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+header.tutorial-header .conf-tag {
+    display: inline-block;
+    background-color: var(--soothing-highlight);
+    color: var(--accent-color);
+    border: 1px solid var(--highlight-border);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+header.tutorial-header h1 {
+    margin: 0 0 18px 0;
+    color: var(--primary-color);
+    font-size: 2.3rem;
+    line-height: 1.25;
+}
+.presenters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 10px;
+}
+.presenter {
+    text-align: center;
+    max-width: 320px;
+}
+.presenter .p-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+.presenter .p-name a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+.presenter .p-name a:hover { text-decoration: underline; }
+.presenter .p-affil {
+    font-style: italic;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 2px;
+}
+.section-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin: 25px 0 30px 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 14px;
+}
+.nav-tag {
+    background-color: var(--soothing-highlight);
+    color: var(--accent-color);
+    border: 1px solid var(--highlight-border);
+    border-bottom: 2px solid var(--accent-color);
+    padding: 5px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.nav-tag:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    text-decoration: none;
+}
+section { margin-bottom: 38px; }
+h1, h2, h3 { color: var(--primary-color); }
+h2 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--soothing-highlight);
+    padding-bottom: 8px;
+    margin-top: 10px;
+}
+h3 { color: var(--secondary-color); font-size: 1.1rem; margin-top: 22px; }
+p { margin: 10px 0; }
+a { color: var(--accent-color); }
+blockquote {
+    background: var(--soothing-highlight);
+    border-left: 4px solid var(--accent-color);
+    margin: 15px 0;
+    padding: 10px 18px;
+    border-radius: 0 6px 6px 0;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+code {
+    background: #eef1f3;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.88em;
+}
+.cell-code-wrap { margin: 14px 0 20px 0; }
+.cell-io-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #8a97a3;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+pre.cell-code {
+    background: var(--code-bg);
+    color: var(--code-fg);
+    padding: 16px 18px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}
+pre.cell-code code { background: none; padding: 0; color: inherit; }
+.cell-output { margin-top: 8px; }
+.output-stream {
+    background: #f8f9fa;
+    border-left: 3px solid var(--accent-color);
+    color: #444;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 8px 0;
+}
+.output-stderr { border-left-color: #d9822b; color: #7a5b1e; background: #fff8ec; }
+.output-error {
+    background: #fdecea;
+    border-left: 3px solid #c0392b;
+    color: #7a1f16;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.8rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin: 8px 0;
+}
+.output-note {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #888;
+    margin: 8px 0;
+}
+.cell-image {
+    text-align: center;
+    margin: 14px 0;
+}
+.cell-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.plotly-embed {
+    margin: 14px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.plotly-embed iframe {
+    width: 100%;
+    height: 560px;
+    border: none;
+    display: block;
+}
+.resources-box {
+    background: var(--soothing-highlight);
+    border: 1px solid var(--highlight-border);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin-top: 10px;
+}
+.btn-download {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+.btn-download:hover { background-color: var(--primary-color); }
+footer.page-footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+@media (max-width: 768px) {
+    .container { padding: 30px 20px; }
+    header.tutorial-header h1 { font-size: 1.6rem; }
+    .presenters { gap: 20px; }
+    .plotly-embed iframe { height: 420px; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+
+    <header class="tutorial-header">
+        <div class="conf-tag">SPCOM 2026 · Tutorial · Indian Institute of Science, Bangalore · July 16–18, 2026</div>
+        <h1>Revisiting 3D Vision in the Deep Learning Era</h1>
+        
+        <div class="presenters">
+            <div class="presenter">
+                <div class="p-name"><a href="https://iiitd.ac.in/anands" target="_blank">Dr. Saket Anand</a></div>
+                <div class="p-affil">IIIT-Delhi</div>
+            </div>
+            <div class="presenter">
+                <div class="p-name"><a href="https://in.linkedin.com/in/lokender" target="_blank">Dr. Lokender Tiwari</a></div>
+                <div class="p-affil">Botlab Dynamics / Vayudh</div>
+            </div>
+        </div>
+        <br>
+        <!-- <h2>DUSt3R Hands-On Tutorial</h2> -->
+    </header>
+    <nav class="section-nav">
+        <h2> Hands-on Session </h2>
+
+    </nav>
+
+<section id="overview">
+<ol>
+<li><a href="https://lokender.github.io/tutorials/DUSt3R_Tutorial_Page.html"><strong>DUSt3R Hands-on Tutorial</strong></a></li>
+<li><a href="https://lokender.github.io/tutorials/MASt3R_Tutorial_Page.html"><strong>MASt3R Hands-on Tutorial</strong></a> </li>
+<li><a href="https://lokender.github.io/tutorials/VGGT_Tutorial_Page.html"><strong>VGGT Hands-on Tutorial</strong></a> </li>
+</ol>
+
+
+
+
+</body>
+</html>
